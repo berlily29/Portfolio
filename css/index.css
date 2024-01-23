@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500;900&display=swap');
 
+
+
 * {
     padding: 0;
     margin: 0;
@@ -27,6 +29,7 @@
     background-color: bisque;
     justify-content: space-between;
     flex-direction: row;
+    opacity: 1;
 }
 
 #logo {
@@ -66,17 +69,19 @@
     height: 20vh;
 }
 
-@media screen and (max-width:650px){
+
+@media screen and (max-width:700px){
 
     
     .navbar {
         display: flex;
         position: fixed;
-        height: 80vh;
+        height: 0vh;
         flex-direction: column;
         align-items: center;
         opacity: 0;
-        transition: opacity .5s;
+        transition: .5s;
+        overflow: hidden;
 
 
     }
@@ -107,6 +112,7 @@
         height: 20vh;
     }
 
+
     .navbar ul {
         display: block;
         width: 100%;
@@ -131,5 +137,7 @@
     }
     body {
         margin-top: 0;
+        height: 40vh;
+        background-color: beige;
     }
 }
