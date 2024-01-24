@@ -6,6 +6,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Exo 2', sans-serif;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -13,11 +14,15 @@
     --bgColor:  #15372a; 
     --textColor: white;
     --hoverMenu: #0f4e69; 
+    --bgColor2:#0f4e69; 
+    --bgColor3: white;
 
 }
 
 body {
-    background-color: var(--bgColor);
+    background: url(assets/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #container {
@@ -42,7 +47,7 @@ body {
     flex-direction: row;
     opacity: 1;
     box-shadow: 1px 1px 10px 1px;
-    z-index: 1;
+    z-index: 3;
 
 }
 
@@ -111,8 +116,9 @@ body {
 }
 
 .introduction {
+    margin-top: 5vh;
     display: flex;
-    height: 60vh;
+    height: 70vh;
     width: 100%;
     padding: 20px;
 
@@ -132,7 +138,7 @@ body {
 }
 
 .profile div{
-    box-shadow: 5px 5px  ;
+
     background: url(/css/assets/profile.jpg) no-repeat;
     background-size: 100% 100%;
     width: 400px;
@@ -140,6 +146,16 @@ body {
     border-radius: 40px;
     transition: transform 2s;
     margin: 20px;
+    z-index: 2;
+
+}
+
+.profile section{
+    position: absolute;
+    height: 50%;
+    width: 30%;
+    z-index: 1;
+    background-color: #0f4e69;
 }
 
 .profile div:hover {
@@ -147,13 +163,24 @@ body {
 }
 
 
-.description {
 
+.description {
+    box-shadow: 30px 10px black ;
     padding: 50px 40px;
-    background-color: #ffffff;
+    background-color: var(--bgColor3);
     color: rgb(0, 0, 0);
     border-radius: 20px;
-    box-shadow: 2px 2px 20px 5px inset;
+    transition: background-color .2s, color .5s;
+}
+
+.description:hover {
+    background-color: #004e76;
+    color: white;
+}
+
+.description:hover a{
+    background-color: var(--bgColor);
+    color: white;
 }
 
 .description a {
@@ -161,9 +188,9 @@ body {
     display: inline; 
     text-decoration: none; 
     color: white;  
-    background-color: #15372a; 
-    padding: 10px;
-    transition: background-color .5s;
+    background-color: var(--iconColor); 
+    padding: 15px;
+    transition: background-color .2s;
     float: right;
     border-radius: 20px;
 
@@ -176,22 +203,76 @@ body {
 
 /* Slideshow container */
 .slideshow-container {
-    height: 100vh;
-    background-color: #0e171b;
+    display: flex;
+    padding: 10px;
+    height: 80vh;
+    width: 90%;
+    margin: 5% 5%;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: var(--bgColor2);
+    box-shadow: 2px 2px 40px 10px;
+    opacity: .7;
+    transition: opacity 1s;
+  }
+
+  .slideshow-container:hover {
+    opacity: 1;
+  }
+
+  .slideshow-container a{ 
+    text-decoration: none;
+    background-color: #15372a;
+    color: white;
+    padding: 20px;
+    float: right;
+    transition: background-color .5s;
+    
+
+  }
+
+  .slideshow-container a:hover {
+    background-color: var(--iconColor);
+}
+
+  .slideshow-container div{
+    box-shadow: 2px 2px 40px 10px inset;
+
     width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+
+  .slideshow-container h1{
+    color: white;
+    font-size: 4em;
+    margin: 20px;
   }
 
 .slideone {
-    background: url(assets/exit.png);
+
+    background: url(assets/work1.png);
+    background-size: cover;
+    background-position: center;
+
 }
  
 .slidetwo {
-    background: url(assets/logo.png);
+
+    background: url(assets/work2.png);
+    background-size: 100% 100%;
+    background-position: center;
+
 }
 
 .slidethree {
-    background: url(assets/headerBG.jpg);
+    background: url(assets/work3.png);
+    background-size: 100% 100%;
+    background-position: center;
+
 }
+
+
   /* The dots/bullets/indicators */
   
   /* Fading animation */
@@ -203,6 +284,66 @@ body {
   @keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
+  }
+
+
+  .skills {
+    display: grid;
+    background-color: #ffffff;
+    width: 100%;
+    height: 65vh;
+    padding: 20px;
+    grid-template-areas: 'header header header' 'skill1 skill2 skill3' 'skill1 skill2 skill3' ;
+    gap: 0 10px;
+    opacity: .7;
+
+  }
+
+  .skills div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    height: 45vh;
+    width: 100%;
+    font-size: 2em; 
+    background-color: var(--bgColor2);
+    color: white;
+    transition: transform 2s;
+    box-shadow: 2px 2px black;
+
+
+  }
+
+  .skills div:hover {
+    transform: rotateY(360deg);
+  }
+
+  .skillHeader {
+    width: 100%;
+
+    grid-area: header;
+    display: flex;
+    text-align: center;
+    height: 15vh;
+    font-size: 4em;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .skill1 {
+    grid-area: 'skill1';
+
+  }
+
+  .skill2 {
+    grid-area: 'skill2';
+
+  }
+
+  .skill3 {
+    grid-area: 'skill3';
+
   }
 
 @media screen and (max-width:750px){
@@ -228,7 +369,7 @@ body {
         background-color: rgb(242, 242, 242);
         border-radius: 100px;
         padding: 2px;
-        z-index: 2;
+        z-index: 4;
         transition: background-color .5s;
         width: 60px;
         padding: 10px;
@@ -237,9 +378,8 @@ body {
     .menu img {
         width: 100%;
         height: 100%;
-
-
     }
+
     .menu:hover {
         background-color: var(--hoverMenu);
     }
@@ -300,12 +440,56 @@ body {
         width: 40%;
         height: 100%;
         border-radius: 40px;
-        transition: transform .2s;
+        transition: transform 2s;
     }
     
     .description {
         margin-top: 20px;
+        box-shadow: 2px 2px black;
     }
+
+    .slideone {
+
+        background: url(assets/work1.png);
+        background-size: cover;
+        background-position: center;
+    
+    }
+     
+    .slidetwo {
+    
+        background: url(assets/work2.png);
+        background-size: cover;
+        background-position: center;
+
+
+    
+    }
+    
+    .slidethree {
+        background: url(assets/work3.png);
+        background-size: cover;
+
+    }
+
+    .skills {
+        display:flex;
+        flex-direction: column;
+
+      }
+    
+      .skills div {
+    
+        font-size: 2em; 
+        background-color: var(--bgColor2);
+        color: white;
+        margin: 10px;
+        transition: transform 2s;
+        box-shadow: 2px 2px black;
+    
+    
+      }
+    
     
     
 
