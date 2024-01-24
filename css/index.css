@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500;900&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 
 * {
     padding: 0;
@@ -9,13 +8,25 @@
     font-family: 'Exo 2', sans-serif;
 }
 
+:root {
+    --iconColor: #14739D; 
+    --bgColor:  #15372a; 
+    --textColor: white;
+    --hoverMenu: #0f4e69; 
+
+}
+
+body {
+    background-color: var(--bgColor);
+}
+
 #container {
     display: flex;
-    height: 200vh;
+    height: 500vh;
     width: 100%;
-    background-color: aqua;
     flex-flow: column wrap;
 }
+
 
 .menu {
     display: none;
@@ -24,16 +35,20 @@
 .navbar {
     display: flex;
     position: fixed;
-    height: 10vh;
+    height: 15vh;
     width: 100%;
-    background-color: bisque;
+    background-color: var(--bgColor);
     justify-content: space-between;
     flex-direction: row;
     opacity: 1;
+    box-shadow: 1px 1px 10px 1px;
+    z-index: 1;
+
 }
 
 #logo {
-    width: 100px;
+    padding: 10px 15px;
+    width: 120px;
     height: 100%;
 }
 
@@ -54,30 +69,149 @@
     text-transform: uppercase;
     text-decoration: none;
     padding: 0 15px;
+    color: var(--textColor);
+    transition: background-color 1s;
 }
 
 .navbar li:hover a{
-    background-color: blue;
+    font-size: 1.65em;
+
+    background-color: var(--hoverMenu);
 }
 
 .navbar li:hover a {
     color: white;
 }
 
-#body {
-    margin-top: 10vh;
-    height: 20vh;
+.header {
+    display: flex;
+    margin-top: 15vh;
+    height: 85vh;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 2px 2px 20px 2px;
+    background: url(/css/assets/headerBG.jpg) no-repeat;
+    background-size: 100% 100%;
+    font-family: 'Quicksand', sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header1 {
+    opacity: 0;
+    transition: opacity 1s;
+}
+.header2 {
+    transition: opacity 5s;
+    opacity:  0;
+}
+
+.introduction {
+    display: flex;
+    height: 60vh;
+    width: 100%;
+    padding: 20px;
+
+}
+
+.introduction div{
+    height: 100%;
+    width: 50%;
 }
 
 
-@media screen and (max-width:700px){
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile div{
+    box-shadow: 5px 5px  ;
+    background: url(/css/assets/profile.jpg) no-repeat;
+    background-size: 100% 100%;
+    width: 400px;
+    height: 100%;
+    border-radius: 40px;
+    transition: transform 2s;
+    margin: 20px;
+}
+
+.profile div:hover {
+    transform: scale(1.1);
+}
+
+
+.description {
+
+    padding: 50px 40px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px 5px inset;
+}
+
+.description a {
+
+    display: inline; 
+    text-decoration: none; 
+    color: white;  
+    background-color: #15372a; 
+    padding: 10px;
+    transition: background-color .5s;
+    float: right;
+    border-radius: 20px;
+
+}
+
+.description a:hover {
+    background-color: var(--hoverMenu);
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+    height: 100vh;
+    background-color: #0e171b;
+    width: 100%;
+  }
+
+.slideone {
+    background: url(assets/exit.png);
+}
+ 
+.slidetwo {
+    background: url(assets/logo.png);
+}
+
+.slidethree {
+    background: url(assets/headerBG.jpg);
+}
+  /* The dots/bullets/indicators */
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+@media screen and (max-width:750px){
 
     
     .navbar {
         display: flex;
         position: fixed;
         height: 0vh;
-        flex-direction: column;
         align-items: center;
         opacity: 0;
         transition: .5s;
@@ -88,36 +222,39 @@
     .menu {
         display: block;
         cursor: pointer;
-        position: absolute;
+        position: fixed;
         top:5px;
         right: 5px;
         background-color: rgb(242, 242, 242);
-        border-radius: 13px;
+        border-radius: 100px;
         padding: 2px;
-        z-index: 1;
+        z-index: 2;
         transition: background-color .5s;
+        width: 60px;
+        padding: 10px;
     }
 
     .menu img {
-        width: 50px;
-        height: 40px;
+        width: 100%;
+        height: 100%;
+
+
     }
     .menu:hover {
-        background-color: aquamarine;
+        background-color: var(--hoverMenu);
     }
     
 
     #logo {
-        width: 150px;
-        height: 20vh;
+        width: 220px;
+        height: 25vh;
     }
 
 
     .navbar ul {
         display: block;
         width: 100%;
-        height: 60vh;
-        background-color: beige;
+        height: 80vh;
     }
 
     .navbar li {
@@ -126,6 +263,7 @@
     }
 
     .navbar li a {
+        border-top: solid rgb(0, 0, 0) 1px;
         display: flex;
         width: 100%;
         padding: 0px;
@@ -135,9 +273,41 @@
         font-size: 1.2em;
 
     }
-    body {
+
+
+    .header {
         margin-top: 0;
-        height: 40vh;
-        background-color: beige;
+        height: 100vh;
+        font-size: 1.5em;
     }
+
+    .introduction {
+        height: 100vh;
+        flex-direction: column-reverse;
+    }
+
+     .introduction div{
+        height: 100%;
+        width: 100%;
+    }
+    
+
+   
+    .profile div{
+        box-shadow: 10px 10px 10px ;
+        background: url(/css/assets/profile.jpg) no-repeat;
+        background-size: cover;
+        width: 40%;
+        height: 100%;
+        border-radius: 40px;
+        transition: transform .2s;
+    }
+    
+    .description {
+        margin-top: 20px;
+    }
+    
+    
+
+
 }
