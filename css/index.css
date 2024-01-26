@@ -48,7 +48,6 @@ body {
     opacity: 1;
     box-shadow: 1px 1px 10px 1px;
     z-index: 3;
-
 }
 
 #logo {
@@ -93,9 +92,8 @@ body {
     margin-top: 15vh;
     height: 85vh;
     width: 100%;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 2px 2px 20px 2px;
-    background: url(/css/assets/headerBG.jpg) no-repeat;
+    box-shadow: 2px 2px 20px 2px inset;
+    background: url(./assets/headerBG.jpg) no-repeat;
     background-size: 100% 100%;
     font-family: 'Quicksand', sans-serif;
     justify-content: center;
@@ -124,53 +122,61 @@ body {
 
 }
 
-.introduction div{
-    height: 100%;
-    width: 50%;
-}
 
 
 
 .profile {
+    height: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.profile div{
-
-    background: url(/css/assets/profile.jpg) no-repeat;
-    background-size: 100% 100%;
-    width: 400px;
-    height: 100%;
-    border-radius: 40px;
-    transition: transform 2s;
-    margin: 20px;
-    z-index: 2;
+.outerprofile {
+    display: flex;
+    height: 90%;
+    width: 70%;
+    border-radius: 50%;
+    align-items: flex-end;
+    background-color: #15372a;
+    box-shadow: 2px 2px 10px 2px inset;
+    transition: background-color 2s, transform 1s;
 
 }
 
-.profile section{
-    position: absolute;
-    height: 50%;
-    width: 30%;
-    z-index: 1;
-    background-color: #0f4e69;
+.outerprofile:hover {
+    background-color: var(--bgColor2);
+    transform: scale(.9);
 }
 
-.profile div:hover {
-    transform: scale(1.1);
+.innerprofile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110%;
+    width: 100%;
+    border-radius: 500px;
+    overflow: hidden;
 }
 
-
+.innerprofile img {
+height: 180%;
+width: 120%;
+}
 
 .description {
-    box-shadow: 30px 10px black ;
+    height: 90%;
+    width: 50%;
+    box-shadow: 20px 10px black ;
     padding: 50px 40px;
     background-color: var(--bgColor3);
     color: rgb(0, 0, 0);
     border-radius: 20px;
     transition: background-color .2s, color .5s;
+    margin: 25px;
+    text-shadow: 1px 1px var(--iconColor);
+    text-transform: uppercase;
 }
 
 .description:hover {
@@ -193,7 +199,6 @@ body {
     transition: background-color .2s;
     float: right;
     border-radius: 20px;
-
 }
 
 .description a:hover {
@@ -214,6 +219,7 @@ body {
     box-shadow: 2px 2px 40px 10px;
     opacity: .7;
     transition: opacity 1s;
+    
   }
 
   .slideshow-container:hover {
@@ -237,7 +243,6 @@ body {
 
   .slideshow-container div{
     box-shadow: 2px 2px 40px 10px inset;
-
     width: 100%;
     height: 100%;
     border-radius: 20px;
@@ -250,11 +255,9 @@ body {
   }
 
 .slideone {
-
     background: url(assets/work1.png);
     background-size: cover;
     background-position: center;
-
 }
  
 .slidetwo {
@@ -262,19 +265,14 @@ body {
     background: url(assets/work2.png);
     background-size: 100% 100%;
     background-position: center;
-
 }
 
 .slidethree {
     background: url(assets/work3.png);
     background-size: 100% 100%;
     background-position: center;
-
 }
 
-
-  /* The dots/bullets/indicators */
-  
   /* Fading animation */
   .fade {
     animation-name: fade;
@@ -286,20 +284,25 @@ body {
     to {opacity: 1}
   }
 
-
-  .skills {
+  #skills {
     display: grid;
-    background-color: #ffffff;
+    background-color: var(--bgColor);
     width: 100%;
     height: 65vh;
     padding: 20px;
     grid-template-areas: 'header header header' 'skill1 skill2 skill3' 'skill1 skill2 skill3' ;
     gap: 0 10px;
     opacity: .7;
-
+    transition: opacity .5s;
+    color: white;
+    box-shadow: 2px 2px 20px 2px black inset;
   }
 
-  .skills div {
+  #skills:hover {
+    opacity: 1;
+  }
+
+  #skills div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -311,17 +314,22 @@ body {
     color: white;
     transition: transform 2s;
     box-shadow: 2px 2px black;
-
-
+    flex-direction: column;
+    box-shadow: 2px 2px 2px inset black;
   }
 
-  .skills div:hover {
+  #skills div img{
+    width: 15%;
+    height: 20%;
+  }
+
+
+  #skills div:hover {
     transform: rotateY(360deg);
   }
 
   .skillHeader {
     width: 100%;
-
     grid-area: header;
     display: flex;
     text-align: center;
@@ -333,22 +341,106 @@ body {
 
   .skill1 {
     grid-area: 'skill1';
-
   }
 
   .skill2 {
     grid-area: 'skill2';
-
   }
 
   .skill3 {
     grid-area: 'skill3';
-
   }
+
+.achievement {
+    display: flex;
+    flex: row wrap;
+    width: 100%;
+    height: 80vh;
+
+}
+
+.achievement > div {
+    width: 50%;
+    height: 95%;
+    padding: 30px;
+    margin: 15px;
+    background-color: var(--bgColor2);
+    border-radius: 40px;
+    box-shadow: 2px 2px 5px 5px inset black;
+    color: white;
+    justify-content: center;
+}
+
+.achievement h1 {
+    text-align: center;
+}
+
+.achievement .certificate ul {
+    margin: 20px;
+}
+
+.achievement .certificate ul li {
+    list-style-image: url(./assets/list-type.png);
+    margin: 5%;
+    padding: 0 4%;
+    background-color: aliceblue;
+    color: black;
+    font-size: .8em;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px inset black;
+    transition: background-color .7s, transform .5s, color .7s;
+}
+
+.achievement .certificate ul li:hover {
+    transform: scale(1.05);
+    background-color: var(--bgColor);
+    color: white;
+}
+
+.achievement .softskills ul {
+    margin: 20px;
+}
+
+.achievement .softskills ul li {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 10px;
+    padding: 3% 3%;
+    background: linear-gradient(to right, rgb(3, 3, 82) 50%, white 50%);
+    background-position: bottom right;
+    background-size: 200% 100%;
+    font-size: .8em;
+
+    color: black;
+    border-radius: 20px;
+    transition: all .7s;
+    border: solid 2px black;
+}
+
+
+
+.achievement .softskills ul li:hover {
+    transform: scale(1.05);
+    background-position: bottom left;
+    color: white;
+}
+
+.achievement .softskills ul li:hover:after {
+    content: '100%';
+}
+
+
+
+
+
 
 @media screen and (max-width:750px){
 
-    
+    #container {
+        height: 600vh;
+    }
+
     .navbar {
         display: flex;
         position: fixed;
@@ -426,25 +518,41 @@ body {
         flex-direction: column-reverse;
     }
 
-     .introduction div{
-        height: 100%;
+     .introduction > div{
+        height: 50%;
         width: 100%;
     }
     
-
-   
-    .profile div{
-        box-shadow: 10px 10px 10px ;
-        background: url(/css/assets/profile.jpg) no-repeat;
-        background-size: cover;
-        width: 40%;
+    .outerprofile {
+        display: flex;
         height: 100%;
-        border-radius: 40px;
-        transition: transform 2s;
+        width: 70%;
+        border-radius: 50%;
+        align-items: flex-end;
+        background-color: #15372a;
+        box-shadow: 2px 2px 10px 2px inset;
+
+    }
+    
+    .innerprofile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130%;
+        width: 100%;
+        border-radius: 500px;
+        overflow: hidden;
+    }
+    
+    .innerprofile img {
+    
+    height: 130%;
+    width: 120%;
     }
     
     .description {
-        margin-top: 20px;
+        font-size: .8em;
+        margin: 20px 0px;
         box-shadow: 2px 2px black;
     }
 
@@ -461,37 +569,50 @@ body {
         background: url(assets/work2.png);
         background-size: cover;
         background-position: center;
-
-
-    
     }
     
     .slidethree {
         background: url(assets/work3.png);
         background-size: cover;
-
     }
 
-    .skills {
+    #skills {
         display:flex;
         flex-direction: column;
-
       }
     
-      .skills div {
-    
+    #skills div {
+        flex-direction: row;
         font-size: 2em; 
         background-color: var(--bgColor2);
         color: white;
-        margin: 10px;
+        margin: 10px 0px;
         transition: transform 2s;
         box-shadow: 2px 2px black;
-    
-    
       }
     
-    
-    
+  #skills div img{
+    width: 10%;
+    height: 60%;
+    margin-right: 40px;
+  }
 
+  
+  .achievement {
+    flex-direction: column;
+    flex: wrap;
+    width: 100%;
+    height: 180vh;
+}
+.achievement > div {
+    width: 90%;
+    height: 40%;
+    padding: 30px;
+    background-color: var(--bgColor2);
+    border-radius: 40px;
+    box-shadow: 2px 2px 5px 5px inset black;
+    color: white;
+    justify-content: center;
+}
 
 }
