@@ -51,7 +51,7 @@ body {
 
 #container {
     display: flex;
-    height: 500vh;
+    height: 501vh;
     width: 100%;
     flex-flow: column wrap;
 }
@@ -405,7 +405,7 @@ width: 120%;
 
 .achievement .certificate ul li {
     list-style-image: url(./assets/list-type.png);
-    margin: 5%;
+    margin: 4%;
     padding: 0 4%;
     background-color: aliceblue;
     color: black;
@@ -454,15 +454,96 @@ width: 120%;
     content: '100%';
 }
 
+.programmingLanguages {
+    display: block;
+    flex: column wrap;
+    height: 60vh;
+    width: 100%;
+    background-color: #15372a;
+    color: white;
+    justify-content: center;
+    opacity: .7;
+    transition: opacity .5s;
+    box-shadow: 2px 2px 20px 2px black inset;
+}
+
+.programmingLanguages h1 {
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 3em;
+    height: 15vh;
+    width: 100%;
+}
+
+.programmingPic {
+    display: grid;
+    height: 30vh;
+    gap: 10px;
+    grid-template-columns: repeat(5,19.5%);
+
+}
+
+.programmingLanguages:hover {
+    opacity: 1;
+}
+
+.programmingPic >div {
+    margin: 10px;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 1px 5px 5px inset black;
+    transition: transform .5s;
+}
+
+.programmingPic >div:hover {
+    transform: scale(1.05);
+
+}
+
+.lang1 {
+    background: url(assets/lang1.png) no-repeat;
+    background-size: 70% 70%;
+    background-position: center;
+}
+
+.lang2 {
+    background: url(assets/lang2.png) no-repeat;
+    background-size: 70% 80%;
+    background-position: center;
+}
+
+.lang3 {
+    background: url(assets/lang3.png) no-repeat;
+    background-size: 80% 70%;
+    background-position: center;
+}
 
 
+.lang4 {
+    background: url(assets/lang4.png);
+    background-size: 100% 80%;
+    background-position: center;
+}
 
+.lang5 {
+    background: url(assets/lang5.png) no-repeat;
+    background-size: 90% 60%;
+    background-position: 70%;
+}
+
+.footer {
+    display: flex;
+    height: 20.97vh;
+    width: 100%;
+    background-color: var(--bgColor);
+}
 
 
 @media screen and (max-width:750px){
 
     #container {
-        height: 600vh;
+        height: 686vh;
     }
 
     .navbar {
@@ -626,12 +707,13 @@ width: 120%;
     flex-direction: column;
     flex: wrap;
     width: 100%;
-    height: 180vh;
+    height: 100vh;
+    background-color: #0f4e69;
 }
 .achievement > div {
     width: 90%;
-    height: 40%;
-    font-size: .9em;
+    height: 45%;
+    font-size: .7em;
     padding: 20px;
     background-color: var(--bgColor2);
     border-radius: 40px;
@@ -639,5 +721,67 @@ width: 120%;
     color: white;
     justify-content: center;
 }
+
+.achievement .certificate ul li {
+    list-style-image: url(./assets/list-type.png);
+    margin: 1% 2%;
+    padding: 0 8%;
+    background-color: aliceblue;
+    color: black;
+    font-size: .7em;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 2px inset black;
+    transition: background-color .7s, transform .5s, color .7s;
+}
+.achievement .certificate ul {
+
+    margin: 0%;
+    padding: 0% 10%;
+
+}
+
+.programmingLanguages {
+    font-size: .4em;
+    height: 230vh;
+    width: 100%;
+    flex-direction: column;
+}
+.programmingPic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 200vh;
+    flex-direction: column;
+}
+
+.lang1 {
+    width: 70%;
+    height: 20%;
+}
+.lang2 {
+    width: 70%;
+    height: 20%;
+}
+
+.lang3 {
+    width: 70%;
+    height: 20%;
+}
+
+.lang4 {
+    width: 70%;
+    height: 20%;
+}
+
+.lang5 {
+    width: 70%;
+    height: 20%;
+}
+
+.footer {
+    display: none;
+}
+
 
 }
