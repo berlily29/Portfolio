@@ -228,7 +228,8 @@ width: 120%;
 }
 
 .description a:hover {
-    background-color: var(--hoverMenu);
+    background-color: white;
+    color: black;
 }
 
 
