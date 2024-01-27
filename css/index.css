@@ -609,13 +609,10 @@ transition: transform .8s;
     background-color: var(--bgColor2);
 }
 
-
-
-
 @media screen and (max-width:750px){
 
     #container {
-        height: 900vh;
+        height: 910vh;
     }
 
     .navbar {
@@ -739,7 +736,7 @@ transition: transform .8s;
 
     #projects {
         display: flex;
-        height: 300vh;
+        height: 310vh;
         width: 100%;
       }
 
