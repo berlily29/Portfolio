@@ -595,9 +595,12 @@ transition: transform .8s;
     box-shadow: 4px 4px 20px 2px  black;
     background-color: var(--bgColor2);
 
-    
 }
 
+.footermid a {
+    text-decoration: none;
+    color: white;
+}
 .footerright{
     display: flex;
     height: 100%;
