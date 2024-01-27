@@ -69,9 +69,14 @@ body {
     background-color: var(--bgColor);
     justify-content: space-between;
     flex-direction: row;
-    opacity: 1;
+    opacity: .8;
     box-shadow: 1px 1px 10px 1px;
     z-index: 3;
+    transition: opacity .8s;
+}
+
+.navbar:hover {
+    opacity: 1;
 }
 
 #logo {
@@ -94,7 +99,6 @@ body {
     height: 100%;
     align-items: center;
     font-size: 1.6em;
-    text-transform: uppercase;
     text-decoration: none;
     padding: 0 15px;
     color: var(--textColor);
@@ -243,6 +247,7 @@ width: 120%;
     box-shadow: 2px 2px 40px 10px;
     opacity: .7;
     transition: opacity 1s;
+    position: relative;
     
   }
 
@@ -276,6 +281,13 @@ width: 120%;
     color: white;
     font-size: 4em;
     margin: 20px;
+  }
+
+  .mySlides h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    color: rgba(0, 0, 0, 0.908);
   }
 
 .slideone {
@@ -521,8 +533,8 @@ width: 120%;
 
 
 .lang4 {
-    background: url(assets/lang4.png);
-    background-size: 100% 80%;
+    background: url(assets/lang4.png) no-repeat;
+    background-size: 70% 80%;
     background-position: center;
 }
 
@@ -534,10 +546,60 @@ width: 120%;
 
 .footer {
     display: flex;
-    height: 20.97vh;
+    height: 20.5vh;
     width: 100%;
-    background-color: var(--bgColor);
+    background-color: transparent;
+    padding: 10px 25px;
+    color: white;
+
 }
+
+.footer p {
+    margin-left: 50px;
+}
+
+.footerlogos {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer a img{
+    height: 75%;
+    width: 70%;
+}
+
+
+.footerleft{
+    height: 100%;
+    width: 35%;
+}
+
+.footermid{
+    display: flex;
+    height: 100%;
+    width: 30%;
+    margin: 0 5%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 4px 4px 20px 2px  black;
+    background-color: var(--bgColor2);
+
+    
+}
+
+.footerright{
+    display: flex;
+    height: 100%;
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 4px 4px 20px 2px  black;
+    background-color: var(--bgColor2);
+}
+
+
 
 
 @media screen and (max-width:750px){
@@ -585,6 +647,10 @@ width: 120%;
     #logo {
         width: 220px;
         height: 25vh;
+    }
+
+    .navbar {
+        opacity: 1;
     }
 
 
@@ -782,6 +848,8 @@ width: 120%;
 .footer {
     display: none;
 }
-
+.mySlides h2 {
+    font-size: .9em;
+  }
 
 }
