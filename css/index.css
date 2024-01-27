@@ -232,7 +232,7 @@ width: 120%;
 }
 
 
-.projects {
+#projects {
     display: flex;
     height: 100vh;
     width: 100%;
@@ -304,7 +304,7 @@ transition: transform .8s;
     height: 100%;
 }
 
-.projects:hover {
+#projects:hover {
     opacity: 1;
 }
 
@@ -614,7 +614,7 @@ transition: transform .8s;
 @media screen and (max-width:750px){
 
     #container {
-        height: 920vh;
+        height: 900vh;
     }
 
     .navbar {
@@ -736,7 +736,7 @@ transition: transform .8s;
         box-shadow: 2px 2px black;
     }
 
-    .projects {
+    #projects {
         display: flex;
         height: 300vh;
         width: 100%;
