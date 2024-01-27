@@ -203,8 +203,6 @@ width: 120%;
     border-radius: 20px;
     transition: background-color .2s, color .5s;
     margin: 25px;
-    text-shadow: 1px 1px var(--iconColor);
-    text-transform: uppercase;
 }
 
 .description:hover {
@@ -234,91 +232,102 @@ width: 120%;
 }
 
 
-/* Slideshow container */
-.slideshow-container {
+.projects {
     display: flex;
-    padding: 10px;
-    height: 80vh;
-    width: 90%;
-    margin: 5% 5%;
+    height: 100vh;
+    width: 100%;
     flex-direction: column;
-    border-radius: 20px;
-    background-color: var(--bgColor2);
-    box-shadow: 2px 2px 40px 10px;
+    box-shadow: 2px 2px 40px 10px inset;
     opacity: .7;
-    transition: opacity 1s;
-    position: relative;
-    
-  }
-
-  .slideshow-container:hover {
-    opacity: 1;
-  }
-
-  .slideshow-container a{ 
-    text-decoration: none;
-    background-color: #15372a;
-    color: white;
+    transition: opacity 1s;    
     padding: 20px;
-    float: right;
-    transition: background-color .5s;
-    
-
   }
 
-  .slideshow-container a:hover {
-    background-color: var(--iconColor);
+.projectheader {
+    display: flex;
+    color: white;
+    font-size: 3em;
+    width: 100%;
+    height: 10%;
+    justify-content: space-between;
+    margin-bottom: 2%;
+   
+}
+.projectheader a {
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+    background-color: var(--bgColor2);
+    border-radius: 30px;
+    font-size: .5em;
+    transition: background-color .3s, color .3s;
+    box-shadow: 1px 1px 1px 1px inset black;
 }
 
-  .slideshow-container div{
-    box-shadow: 2px 2px 40px 10px inset;
+.projectheader a:hover {
+    background-color: var(--bgColor3);
+    color: black;
+}
+
+.projectcontainer {
+    display: grid;
+    width: 100%;
+    height: 90%;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.projectcontainer >div {
+    display: flex;
+border: solid black 3px;
+padding: 20px;
+width: 100%;
+height: 100%;
+background-color: var(--bgColor);
+flex-direction: column;
+transition: transform .8s;
+
+}
+
+.projectcontainer>div:hover {
+    transform: scale(.95);
+}
+
+.projectimg {
+    width: 100%;
+    height: 40%;
+    background-color: #14739D;
+}
+
+.projectimg img {
     width: 100%;
     height: 100%;
-    border-radius: 20px;
-  }
+}
 
-  .slideshow-container h1{
+.projects:hover {
+    opacity: 1;
+}
+
+.projectdesc {
+    padding: 20px;
+    text-align: center;
     color: white;
-    font-size: 4em;
-    margin: 20px;
-  }
-
-  .mySlides h2 {
-    position: absolute;
-    bottom: 20px;
-    left: 30px;
-    color: rgba(0, 0, 0, 0.908);
-  }
-
-.slideone {
-    background: url(assets/work1.png);
-    background-size: cover;
-    background-position: center;
-}
- 
-.slidetwo {
-
-    background: url(assets/work2.png);
-    background-size: 100% 100%;
-    background-position: center;
 }
 
-.slidethree {
-    background: url(assets/work3.png);
-    background-size: 100% 100%;
-    background-position: center;
+.projectdesc a{
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    background-color: var(--bgColor2);
+    border-radius: 30px;
+    transition: background-color .3s, color .5s;
+    box-shadow: 1px 1px 1px 1px  black;
 }
 
-  /* Fading animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-  }
+.projectdesc a:hover {
+    background-color: var(--bgColor3);
+    color: black;
+}
 
   #skills {
     display: grid;
@@ -605,7 +614,7 @@ width: 120%;
 @media screen and (max-width:750px){
 
     #container {
-        height: 686vh;
+        height: 920vh;
     }
 
     .navbar {
@@ -727,24 +736,35 @@ width: 120%;
         box-shadow: 2px 2px black;
     }
 
-    .slideone {
+    .projects {
+        display: flex;
+        height: 300vh;
+        width: 100%;
+      }
 
-        background: url(assets/work1.png);
-        background-size: cover;
-        background-position: center;
-    
+      .projectheader {
+        display: flex;
+        color: white;
+        flex-direction: column;
+        font-size: 3em;
+        width: 100%;
+        height: 10%;
+        justify-content: space-between;
+        margin-bottom: 5%; }
+
+        .projectheader a{
+            text-align: center;}
+
+       
+
+    .projectcontainer {
+        display: flex;
+        flex-direction: column;
+
     }
-     
-    .slidetwo {
-    
-        background: url(assets/work2.png);
-        background-size: cover;
-        background-position: center;
-    }
-    
-    .slidethree {
-        background: url(assets/work3.png);
-        background-size: cover;
+    .projectcontainer > div{
+        width: 100%;
+
     }
 
     #skills {
@@ -848,8 +868,5 @@ width: 120%;
 .footer {
     display: none;
 }
-.mySlides h2 {
-    font-size: .9em;
-  }
 
 }
