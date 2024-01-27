@@ -499,7 +499,7 @@ transition: transform .8s;
 
 .programmingPic {
     display: grid;
-    height: 30vh;
+    height: 35vh;
     gap: 10px;
     grid-template-columns: repeat(5,19.5%);
 
