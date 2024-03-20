@@ -196,14 +196,13 @@ width: 120%;
 .description {
     height: 90%;
     width: 50%;
-    box-shadow: 20px 10px black ;
+    box-shadow: 5px 5px black ;
     padding: 50px 40px;
     background-color: var(--bgColor3);
     color: rgb(0, 0, 0);
     border-radius: 20px;
     font-size: 1.35vw;
     transition: background-color .2s, color .5s;
-    margin: 25px;
 }
 
 .description:hover {
@@ -737,7 +736,7 @@ transition: transform .8s;
     }
     
     .description {
-        font-size: 2vw;
+        font-size: 2.1vw;
 
     }
 
