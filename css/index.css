@@ -517,7 +517,6 @@ a:active {
     .pleft {
         position: relative;
         border-radius: 0;
-        background-color: transparent;
         box-shadow: 10px 10px inset;
         
     }
