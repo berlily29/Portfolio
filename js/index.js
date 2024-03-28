@@ -1,47 +1,32 @@
 
-//for menu
-var menu =  document.querySelector('.menu');
-var navbar = document.querySelector('.navbar');
-var menuimg = document.querySelector('.menu2');
-var toggleMenu = true;
-var header1 = document.querySelector('.header1');
-var header2 = document.querySelector('.header2');
-
+var nav = document.querySelector('.nav');
+var navmobile = document.querySelector('#navmobile');
+var navicon = document.querySelector('#navicon')
 
 window.addEventListener('resize',()=> {location.reload()});
 
-window.addEventListener('load', ()=> {
-    header1.style.opacity = '1';
-    header2.style.opacity = '1';
+window.addEventListener('scroll',() => {
+    var scroll = window.scrollY
+
+    if (scroll <= 20) {
+        nav.style.opacity = '1';
+    }
+    else if (scroll > 20 && window.innerWidth > 1000){
+        nav.style.opacity = '.4'
+    }
+})
+var toggled = false
+navmobile.addEventListener('click', ()=> {
+        
+        if (toggled == false) {
+        toggled = true;
+        navicon.src = 'css/assets/goback.png';
+        nav.style.height = '70%'; }
+        else {
+            toggled = false;
+            navicon.src = 'css/assets/menu.png';
+            nav.style.height = '0%';
+        }
+
 
 })
-
-menu.addEventListener("click", () =>{
-    if (toggleMenu == true) {
-        toggleMenu = false
-        navbar.style.display = 'flex';
-        
-
-        setTimeout(() => {
-            menuimg.src = 'css/assets/exit.png';
-            navbar.style.opacity = '1';
-            navbar.style.height ='80vh';
-    
-        }, 100);
-
-    }
-    else if (toggleMenu == false) {
-        toggleMenu = true;
-
-        menuimg.src = 'css/assets/menu.png'
-        setTimeout(() => {
-            navbar.style.height ='0vh';
-            }, 100);
-
-    }
-    else {
-        console.log('error');
-    }
-
-});
-

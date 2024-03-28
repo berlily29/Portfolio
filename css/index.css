@@ -17,13 +17,15 @@
     --color1: #334e6d;
     --color2: #113011;
     --click:red;
-    --buttoncont:#041d5d;
+    --buttoncont:#0d2836;;
     --hovertext:#b99f9f;
-    --hoverbutton: #ffffff;
+    --hoverbutton: #4d5eb4;
+
 }
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 a:visited {
@@ -31,40 +33,128 @@ a:visited {
 }
 
 a:hover {
-    color: #0c249a;
+    color: #4d5eb4;
 }
 
 a:active {
     color: var(--click);
 }
 
-
+/* DOCUMENT */
 #container {
     display: flex;
-    height: 250vh;
+    height: 350vh;
     width: 100%;
     flex-flow: column wrap;
     align-items: center;
     background-color: var(--bodybg);
+    
 }
 
 .nav {
     display: flex;
     background-color: var(--navbgcolor);
     flex-flow: row;
-    width: 100vw;
+    width: 100%;
     height: 15vh;
     position: fixed;
     opacity: .4;
     transition: opacity .5s;
     z-index: 5;
     box-shadow: 1px 1px 10px 1px;
+    padding: .5% 2%;
+    justify-content: space-between;
+}
+
+#back {
+    position: fixed;
+    display: none;
+    z-index: 6;
+    top: 88vh;
+    left: 77vw;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 1px 1px 20px 1px black;
+    transition: background-color .8s;
+    cursor: pointer;
+}
+
+#back img {
+    height: 100%;
+    width: 100%;
+    padding: 15%;
+    
+}
+
+#back:hover {
+    background-color: var(--hoverbutton);
+}
+
+#back:active {
+    background-color:var(--click);
+}
+
+#navmobile {
+    position: fixed;
+    display: none;
+    z-index: 6;
+    top: 3vh;
+    height: 60px;
+    width: 60px;
+    left: 5vw;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 1px 1px 20px 1px black;
+    cursor: pointer;
+    
+    
+}
+
+#navmobile img {
+    height: 100%;
+    width: 100%;
+    padding: 15%;
+}
+
+#navmobile:hover {
+    background-color: var(--hoverbutton);
+}
+
+#navmobile:active {
+    background-color:var(--click);
+}
+
+.nav div {
+    display: flex;
+    height: 100%;
+    list-style-type: none;
+    width: 40%;
+    align-items: center;
+}
+
+
+.nav div a {
+    display: inline;
+
+    margin: 0 1%;
+    padding: 1% 4%;
+    cursor: pointer;
+}
+
+.nav img {
+    height: 100%;
+    width: 100%;
 }
 
 .nav:hover {
     opacity: 1;
 }
 
+
+
+/* MAIN CONTAINER FOR BODY */
 #bodycontent {
     margin-top: 18vh;
     display: flex;
@@ -72,11 +162,14 @@ a:active {
     height: 228vh;
     position: relative;
     flex-flow: column wrap;
+    align-items: center;
 }
 
+
+/* PROFILE SLIDE */
 #profile {
     display: flex;
-    width: 100vw;
+    width: 100%;
     height: 80vh;
     font-size: 1vw;
     
@@ -93,7 +186,6 @@ a:active {
     margin: 1%;
     border-radius: 100%;
     box-shadow: 10px 10px;
-    
 }
 
 
@@ -254,7 +346,7 @@ a:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: absolute;
     border-radius: 100%;
     background-color: rgb(123, 122, 118);
     z-index: 1;
@@ -305,7 +397,7 @@ a:active {
 
 .promptcontent {
     border-right: 2px white solid;
-    transition: opacity 0s;
+    transition: opacity .4s;
     width: 80%;
     white-space: nowrap;
     overflow: hidden;
@@ -353,6 +445,56 @@ a:active {
     color: var(--click);
 }
 
+
+#aboutme {
+    display: flex;
+    padding-top: 2%;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    background-color: var(--color2);
+    color: white;
+    flex-direction: column;
+    box-shadow: 1px 1px 20px 1px black inset;
+    padding: 1% 20%;
+}
+
+
+/* ABOUT ME SLIDE */
+#aboutme h1 {
+    font-size: 2em;
+}
+
+#aboutme h2 {
+    color: var(--hovertext);
+    font-size: 1.2em;
+}
+
+#aboutme h3 {
+    line-height: 40px;
+    text-align: center;
+    font-size: 1em;
+    color: rgb(203, 218, 213);
+}
+/* SPACERS */
+#spacer1 {
+height: 15vh;
+background: url(assets/bg.jpg);
+width: 100%;
+background-size: cover;
+box-shadow: 1px 1px 10px 1px black;
+}
+
+#spacer2 {
+    height: 15vh;
+    background: url(assets/bg.jpg);
+    width: 100%;
+    background-size: cover;
+    box-shadow: 1px 1px 10px 1px black;
+    }
+    
+
+
 /* animations for the circle and promot*/
 @keyframes textbounce {
     from, to {
@@ -374,8 +516,8 @@ a:active {
 }
 
 @keyframes typing {
-    from { width: 6% }
-    to { width: 80% }
+    from { width: 6%; }
+    to { width: 90% ;}
   }
   
 .roll-out {
@@ -398,7 +540,6 @@ a:active {
     75% { transform: scale(0.95, 1.05); }
   }
 
-
   @media screen and (max-width:1000px){
 
     #container {
@@ -407,10 +548,48 @@ a:active {
 
     #bodycontent {
         margin-top: 0;
+        height: 1000vh;
     }
 
     .nav {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+        transition: .4s;
+        height: 0vh;
+    }
+
+    .nav div {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        flex-direction: column;
+        font-size: .8em;
+    }
+
+    .nav a {
+        height: 50%;
+        margin-top: 10%;
+        width: 50%;
+    }
+    
+    
+    .nav div a {
+        display: flex;
+        align-items: center;
+        height: 25%;
+        font-size: 1.4em;
+        width: 100%;
+        margin: 0;
+
+    }
+    
+    .nav img {
+        height: 100%;
+        width: 100%;
     }
 
     #profile {
@@ -424,7 +603,6 @@ a:active {
         height: 100%;
         width: 100%;
         margin: 0;
-        box-shadow: none;
     }
 
     .profilepic {
@@ -494,7 +672,7 @@ a:active {
     }
     
     .promptcontent {
-        font-size: 1.2em;
+        font-size: .8em;
 
     }
     
@@ -515,16 +693,74 @@ a:active {
     }
 
     .pleft {
-        position: relative;
-        border-radius: 0;
-        box-shadow: 10px 10px inset;
-        
+ 
+        border-radius: 0%;
+        box-shadow: 1px 1px 20px 2px inset;
     }
 
-    @keyframes typing {
+    .pright {
+        box-shadow: none;
+    }
+
+    @keyframes typingprompt {
         from { width: 6% }
-        to { width: 80% }
+        to { width: 90% }
       }
+
+      .circle1 {
+
+
+        top: 2%;
+        left: 10%;
+        width: 20%;
+        height: 10%;
+    }
+    
+    .circle2 {
+ 
+        top: 15%;
+        left: 45%;
+        width: 30%;
+        height: 20%;
+    }
+    
+    .circle3 {
+        top: 80%;
+        left: 30%;
+        width: 10%;
+        height: 5%;}
+
+
+        #back {
+            display: block;
+        }
+        
+        #navmobile {
+            display: block;
+        }
+
+        #aboutme {
+      
+            height: 110vh;
+            padding: 5% 15%;
+        }
+
+        #aboutme h1 {
+            font-size: 1.2em;
+        }
+        
+        #aboutme h2 {
+            color: var(--hovertext);
+            font-size: 1em;
+        }
+        
+        #aboutme h3 {
+            line-height: 40px;
+            text-align: center;
+            font-size: .8em;
+            color: rgb(203, 218, 213);
+        }
+
       
 
     
