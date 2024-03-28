@@ -70,7 +70,7 @@ a:active {
     position: fixed;
     display: none;
     z-index: 6;
-    top: 85vh;
+    top: 79vh;
     left: 77vw;
     height: 60px;
     width: 60px;
@@ -710,7 +710,7 @@ box-shadow: 1px 1px 10px 1px black;
       .circle1 {
 
 
-        top: 2%;
+        top: 5%;
         left: 10%;
         width: 20%;
         height: 10%;
@@ -719,7 +719,7 @@ box-shadow: 1px 1px 10px 1px black;
     .circle2 {
  
         top: 15%;
-        left: 45%;
+        left: 60%;
         width: 30%;
         height: 20%;
     }
