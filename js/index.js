@@ -8,11 +8,11 @@ window.addEventListener('resize',()=> {location.reload()});
 window.addEventListener('scroll',() => {
     var scroll = window.scrollY
 
-    if (scroll <= 20) {
-        nav.style.opacity = '1';
+    if (scroll < 20) {
+        nav.style.backgroundColor = '#0e1c01' 
     }
-    else if (scroll > 20 && window.innerWidth > 1000){
-        nav.style.opacity = '.4'
+    else {
+        nav.style.backgroundColor = 'var(--navbgcolor)'
     }
 })
 var toggled = false
