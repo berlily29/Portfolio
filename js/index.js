@@ -3,8 +3,6 @@ var nav = document.querySelector('.nav');
 var navmobile = document.querySelector('#navmobile');
 var navicon = document.querySelector('#navicon')
 
-window.addEventListener('resize',()=> {location.reload()});
-
 window.addEventListener('scroll',() => {
     var scroll = window.scrollY
 
@@ -15,6 +13,7 @@ window.addEventListener('scroll',() => {
         nav.style.backgroundColor = 'var(--navbgcolor)'
     }
 })
+
 var toggled = false
 navmobile.addEventListener('click', ()=> {
         
@@ -29,14 +28,4 @@ navmobile.addEventListener('click', ()=> {
         }
 
 
-})
-
-
-var myVideo = document.getElementById("workvid"); 
-
-function playPause() { 
-  if (myVideo.paused) 
-    myVideo.play(); 
-  else 
-    myVideo.pause(); 
-} 
+});
