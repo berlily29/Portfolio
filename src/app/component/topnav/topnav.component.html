@@ -1,0 +1,29 @@
+<!-- Main Navigation -->
+<div *ngIf="!isMobile" class="justify-center items-center flex shadow-2xl h-[10vh]">
+    <a routerLink="/home" class="m-2 hover:text-white" routerLinkActive="text-white" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/projects" class="m-4 hover:text-white" routerLinkActive="text-white" [routerLinkActiveOptions]="{ exact: true }">Projects</a>
+    <img src="profiles/personal_logo.png" class="h-[50px] w-[50px]">
+    <a routerLink="/contacts" class="m-4 hover:text-white" routerLinkActive="text-white" [routerLinkActiveOptions]="{ exact: true }">Contacts</a>
+    <a href="https://luisegianyambao.jobs180.com" class="hover:text-white m-2">About Me</a>
+</div>
+
+  
+  <div *ngIf="isMobile">
+    <!-- Mobile Navigation Dropdown Button -->
+    <button (click)="toggleMenu()" class="fixed top-4 right-4 bg-[#304e4c] text-white px-3 py-2 rounded-full shadow-lg">
+        <i class="material-icons">menu</i>
+
+    </button>
+  
+    <!-- Dropdown Menu -->
+    <div *ngIf="isMenuOpen" class="fixed top-16 right-4 bg-[#304e4c] text-black px-10 py-3 rounded-lg shadow-lg">
+      <img src="profiles/personal_logo.png" class="h-[80px] w-[80px]">
+
+      <a routerLink="/home" routerLinkActive="text-white" [routerLinkActiveOptions]="{ exact: true }" class="block text-center mt-2 py-2">Home</a>
+      <a routerLink="/projects" routerLinkActive="text-white" [routerLinkActiveOptions]="{ exact: true }" class="block text-center py-2">Projects</a>
+      <a routerLink="/contacts" routerLinkActive="text-white" [routerLinkActiveOptions]="{ exact: true }" class="block text-center py-2">Contacts</a>
+      <a href="https://luisegianyambao.jobs180.com" class="hover:text-white">About Me</a>
+
+    </div>
+  </div>
+  
