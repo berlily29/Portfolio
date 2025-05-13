@@ -1,0 +1,80 @@
+<div>
+    
+    <div *ngIf="!isMobile" class="relative shadow-[inset_0_4px_12px_rgba(0,0,0,0.6)] bg-white">
+        <img src="landpage.jpg" class="w-[100vw]">
+        <div class="grid md:grid-cols-3 absolute top-[50%] left-[7%] gap-x-2">
+        <a href="profiles/Luise_Yambao_resume.pdf" download="Luise_Yambao_Resume.pdf" class="flex items-center justify-center bg-white hover:bg-gray-200 rounded-xl p-1 md:p-2 lg:p-3"><span class="material-icons">play_circle</span>&nbsp;&nbsp;Resume</a>
+        <a href="https://www.linkedin.com/in/luise-gian-yambao-9a3757325" class="flex items-center justify-center bg-gray-400/70 hover:bg-gray-400/60 rounded-xl p-1 md:p-2 lg:p-3"><span class="material-icons">info</span>&nbsp;&nbsp;LinkedIn</a>
+        <a href="https://github.com/berlily29" class="flex items-center justify-center bg-gray-400/70 hover:bg-gray-400/60 rounded-xl p-1 md:p-2 lg:p-3"><span class="material-icons">dashboard</span>&nbsp;&nbsp;Github</a>
+        </div>
+    </div>
+
+    <div *ngIf="isMobile" class="flex flex-col items-center w-full bg-red-1000 relative">
+        
+        <div class="flex flex-col bg-red-900 rounded-full shadow-[inset_0_4px_12px_rgba(0,0,0,0.6)] mt-10"> 
+            <img src='profile.png' alt="profile picture">
+            <div class="absolute bottom-[20%] bg-white/70 rounded-e-xl">
+            <h1 class="text-black text-sm mx-4 rounded-lg p-2">The Web Developer
+                <br>
+                <small>Luise Yambao</small>
+            </h1>
+           
+            </div>
+        </div>
+
+        <div class="absolute bottom-[8%] grid grid-cols-3 gap-x-2 w-full px-4">
+            <a href="profiles/Luise_Yambao_resume.pdf" download="Luise_Yambao_Resume.pdf" class="flex items-center text-[10px] md:text-md justify-center bg-white hover:bg-gray-200 rounded-xl p-1"><span class="material-icons">play_circle</span>&nbsp;&nbsp;Resume</a>
+            <a href="https://www.linkedin.com/in/luise-gian-yambao-9a3757325" class="flex items-center md:text-md text-[10px] justify-center bg-gray-400/70 hover:bg-gray-400/60 rounded-xl p-1"><span class="material-icons">info</span>&nbsp;&nbsp;LinkedIn</a>
+            <a href="https://github.com/berlily29" class="flex items-center justify-center bg-gray-400/70 md:text-md text-[10px] hover:bg-gray-400/60 rounded-xl p-1"><span class="material-icons">dashboard</span>&nbsp;&nbsp;Github</a>
+        </div>
+
+    </div>
+
+    <div class="">
+        <h2 class="text-white text-2xl md:text-5xl text-center py-6">
+            Web Development
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-4">
+            <div class="flex items-center justify-center py-2" *ngFor="let web of webDev">
+                <img [src]="web.src" [alt]="web.alt" class="h-20 w-20 md:w-30 md:h-30 grayscale hover:grayscale-0 duration-300">
+            </div>
+        </div>
+    </div>
+
+      <div class="rounded-2xl">
+        <h2 class="text-white text-xl md:text-5xl text-center py-10">
+            Database Management
+        </h2>
+        <div class="grid grid-cols-2">
+            <div class="flex items-center justify-center py-5">
+                <img src="mongodb.png" alt="Mongodb Logo" class="h-20 w-20 md:w-35 md:h-35 grayscale hover:grayscale-0 duration-300">
+            </div>
+             <div class="flex items-center justify-center py-2">
+                <img src="mysql.png" alt="MySQL Logo" class="h-20 w-20 md:w-35 md:h-35 grayscale hover:grayscale-0 duration-300">
+            </div>
+        </div>
+    </div>
+
+    <div class=" overflow-hidden bg-gray-900/80 shadow-[inset_0_4px_12px_rgba(0,0,0,0.6)] py-5">
+        <h2 class="text-white text-xl md:text-2xl text-center mb-8 ">Other Programming Tools</h2>
+
+        <div class="overflow-hidden w-full ">
+            <div class="flex w-max animate-scroll-left-to-right">
+                 <div *ngFor="let source of sources">
+                    <img [src]="source.src" [alt]="source.alt" class="w-20 h-20 md:w-27 md:h-27 mx-8 grayscale hover:grayscale-0 duration-300">
+                </div>
+                 <div *ngFor="let source of sources">
+                    <img [src]="source.src" [alt]="source.alt" class="w-20 h-20 md:w-27 md:h-27 mx-8 grayscale hover:grayscale-0 duration-300">
+                </div>
+                 <div *ngFor="let source of sources">
+                    <img [src]="source.src" [alt]="source.alt" class="w-20 h-20 md:w-27 md:h-27 mx-8 grayscale hover:grayscale-0 duration-300">
+                </div>
+            </div>
+            
+        </div>
+
+         
+    </div>
+
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,50 @@
+
+
+<div class="relative w-full px-8 py-5">
+  <h1 class="text-white text-2xl font-semibold px-10 mb-4">{{ title }}</h1>
+
+  <!-- Left Arrow -->
+  <button *ngIf="showLeftArrow"
+    class="absolute left-4 top-1/2 h-full -translate-y-1/2 z-10 hover:bg-black/50 duration-200 p-2 text-white"
+    (click)="scrollLeft()"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-10" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+  </button>
+
+
+  <div
+    #slider
+    class="flex overflow-hidden gap-4 scroll-smooth no-scrollbar px-10 py-4"
+  >
+    <div
+      *ngFor="let item of items"
+      class="w-[300px] h-[400px] bg-gray-600/20 p-4 rounded-lg flex flex-col items-center justify-center text-white text-xl shrink-0 transform transition-transform duration-300 hover:scale-105"
+    >
+      <img [src]='item.image' class="w-full h-full rounded-2xl" [alt]="item.alt">
+      <h1 class="py-2 text-2xl">{{ item.title }}</h1>
+      <p class="text-center py-2 text-sm"> {{ item.description }}</p> 
+      <p class="flex flex-wrap w-full justify-start text-sm my-2">Stack:   
+        <small *ngFor="let stack of item.stack" class="mx-2 text-sm">
+           {{ stack }} 
+        </small></p>
+
+      <div class="flex w-full justify-end" *ngIf="item.link != ''"> <a [href]="item.link" class='bg-red-600/80 hover:bg-red-600/50 duration-200 rounded-full p-2 text-sm'>Demo</a></div>
+
+      
+    </div>
+  </div>
+
+  <!-- Right Arrow -->
+  <button *ngIf="showRightArrow"
+    class="absolute right-4 top-1/2 h-full -translate-y-1/2 z-10 hover:bg-black/50 duration-200 p-2 rounded-full text-white"
+    (click)="scrollRight()"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-10" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+</div>

@@ -1,0 +1,12 @@
+<app-topnav class="z-2"> </app-topnav>
+
+<div class="min-h-[95vh] flex justify-center items-center text-center" *ngIf="isMobile">
+  <h2 class="text-white text-md px-10">You are currently on Mobile please use a web to view projects.</h2>
+</div>
+<div *ngIf="!isMobile">
+<app-slider [title]="'Top Projects'"
+  [items]="projectSlide1"></app-slider>
+  <app-slider [title]="'Small Projects'"
+  [items]="projectSlide2"></app-slider>
+</div>
+<app-footer></app-footer>

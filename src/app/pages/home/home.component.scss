@@ -1,0 +1,12 @@
+@keyframes scrollLeftToRightLoop {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-scroll-left-to-right {
+  animation: scrollLeftToRightLoop 20s linear infinite;
+}
