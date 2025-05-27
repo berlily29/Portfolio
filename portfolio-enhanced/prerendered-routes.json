@@ -1,0 +1,11 @@
+{
+  "routes": {
+    "/Portfolio": {},
+    "/Portfolio/contacts": {},
+    "/Portfolio/error": {},
+    "/Portfolio/error/404": {},
+    "/Portfolio/error/503": {},
+    "/Portfolio/home": {},
+    "/Portfolio/projects": {}
+  }
+}
