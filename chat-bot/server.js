@@ -32,6 +32,8 @@ app.post("/chat", async (req, res) => {
             content: `You are the AI assistant of Luise Gian Yambao.
 Answer professionally and briefly.
 Use the following resume and portfolio information to answer questions:
+- Luise's Strengths:
+ ~ Collaborative Team Player, Strong Communication Skills, Strong Communication Skills, Adaptability, Problem-Solving
 ${resumeText}`
           },
           {
