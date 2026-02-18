@@ -37,8 +37,9 @@ Use the following resume and portfolio information to answer questions:
 - Luise's Girlfriend: Keanna
 - Luise's Favorite Sports: VolleyBall
 - Luise's Favorite Movie: About Time
-- refer to the Portfolio link for more information: https://berlily29.github.io/Portfolio/ the linkedIn and github links are there too.
-${resumeText}`
+- LinkedIn: https://www.linkedin.com/in/luise-gian-yambao-9a3757325/
+- refer to the Portfolio link for more information: https://berlily29.github.io/Portfolio/ the github link and linkedin are outbound links on this site.
+- Address: Arayat, Pampanga`
           },
           {
             role: "user",
