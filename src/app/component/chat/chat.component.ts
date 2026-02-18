@@ -5,42 +5,70 @@ import { ChatService } from '../../services/chat.service';
   selector: 'app-chat',
   standalone: false,
   templateUrl: './chat.component.html',
-  styleUrl: './chat.component.scss'
+  styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent {
-userInput: string = '';
-messages: { sender: string, text: string }[] = [];
-loading = false;
+  userInput: string = '';
+  messages: { sender: string, text: string }[] = [];
+  loading = false;
+  charCount: number = 0;
+  isOpen: boolean = false;
 
-// NEW: control chat window open/close
-isOpen = false;
+  // Predefined AI buttons
+  preMessages = [
+    { label: "Luise's Strengths", content: "Tell me about Luise's strengths." },
+    { label: "Luise's Work History", content: "Tell me about Luise's work history." },
+    { label: "Luise's Tech Stack", content: "Tell me about Luise's tech stack." }
+  ];
 
-constructor(private chatService: ChatService) {}
+  constructor(private chatService: ChatService) {}
 
-// NEW: toggle chat window
-toggleChat() {
-  this.isOpen = !this.isOpen;
-}
+  toggleChat() {
+    this.isOpen = !this.isOpen;
+  }
 
-sendMessage() {
-  if (!this.userInput.trim()) return;
+  updateCharCount() {
+    this.charCount = this.userInput.length;
+  }
 
-  const userMessage = this.userInput;
+  // Send message from input
+  sendMessage() {
+    if (!this.userInput.trim()) return;
 
-  this.messages.push({ sender: 'user', text: userMessage });
-  this.userInput = '';
-  this.loading = true;
+    const userMessage = this.userInput;
+    this.messages.push({ sender: 'user', text: userMessage });
+    this.userInput = '';
+    this.charCount = 0;
+    this.loading = true;
 
-  this.chatService.sendMessage(userMessage).subscribe({
-    next: (res) => {
-      const reply = res.choices[0].message.content;
-      this.messages.push({ sender: 'bot', text: reply });
-      this.loading = false;
-    },
-    error: () => {
-      this.messages.push({ sender: 'bot', text: 'Error connecting to server.' });
-      this.loading = false;
-    }
-  });
-}
+    this.chatService.sendMessage(userMessage).subscribe({
+      next: (res) => {
+        const reply = res.choices[0].message.content;
+        this.messages.push({ sender: 'bot', text: reply });
+        this.loading = false;
+      },
+      error: () => {
+        this.messages.push({ sender: 'bot', text: 'Error connecting to server.' });
+        this.loading = false;
+      }
+    });
+  }
+
+  // Send message from pre-defined button
+  sendPreMessage(content: string) {
+    this.messages.push({ sender: 'user', text: content });
+    this.loading = true;
+
+    this.chatService.sendMessage(content).subscribe({
+      next: (res) => {
+        const reply = res.choices[0].message.content;
+        this.messages.push({ sender: 'bot', text: reply });
+        this.loading = false;
+      },
+      error: () => {
+        this.messages.push({ sender: 'bot', text: 'Error connecting to server.' });
+        this.loading = false;
+      }
+    });
+  }
 }
