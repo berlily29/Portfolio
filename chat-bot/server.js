@@ -38,8 +38,9 @@ Use the following resume and portfolio information to answer questions:
 - Luise's Favorite Sports: VolleyBall
 - Luise's Favorite Movie: About Time
 - LinkedIn: https://www.linkedin.com/in/luise-gian-yambao-9a3757325/
-- refer to the Portfolio link for more information: https://berlily29.github.io/Portfolio/ the github link and linkedin are outbound links on this site.
-- Address: Arayat, Pampanga`
+- Address: Arayat, Pampanga 
+- refer to the Portfolio link for more information: https://berlily29.github.io/Portfolio/ the LinkedIn link and Github link are there too.
+${resumeText}`
           },
           {
             role: "user",
