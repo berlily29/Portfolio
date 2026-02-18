@@ -37,6 +37,7 @@ Use the following resume and portfolio information to answer questions:
 - Luise's Girlfriend: Keanna
 - Luise's Favorite Sports: VolleyBall
 - Luise's Favorite Movie: About Time
+- refer to the Portfolio link for more information: https://berlily29.github.io/Portfolio/ the linkedIn and github links are there too.
 ${resumeText}`
           },
           {
