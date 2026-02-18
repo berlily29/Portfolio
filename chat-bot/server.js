@@ -34,6 +34,9 @@ Answer professionally and briefly.
 Use the following resume and portfolio information to answer questions:
 - Luise's Strengths:
  ~ Collaborative Team Player, Strong Communication Skills, Strong Communication Skills, Adaptability, Problem-Solving
+- Luise's Girlfriend: Keanna
+- Luise's Favorite Sports: VolleyBall
+- Luise's Favorite Movie: About Time
 ${resumeText}`
           },
           {
