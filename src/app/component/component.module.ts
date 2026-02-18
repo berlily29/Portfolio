@@ -4,6 +4,8 @@ import { FooterComponent } from './footer/footer.component';
 import { TopnavComponent } from './topnav/topnav.component';
 import { RouterModule } from '@angular/router';
 import { SliderComponent } from './slider/slider.component';
+import { ChatComponent } from './chat/chat.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -11,13 +13,15 @@ import { SliderComponent } from './slider/slider.component';
   declarations: [
     FooterComponent,
     TopnavComponent,
-    SliderComponent
+    SliderComponent,
+    ChatComponent,
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
-  exports: [FooterComponent,TopnavComponent,SliderComponent]
+  exports: [FooterComponent,TopnavComponent,SliderComponent,ChatComponent]
 
 })
 export class ComponentModule { }

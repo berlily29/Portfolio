@@ -1,0 +1,15 @@
+/* Smooth open effect */
+@keyframes open-chat {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-open-chat {
+  animation: open-chat 0.3s ease-out forwards;
+}
