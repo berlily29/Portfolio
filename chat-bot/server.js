@@ -40,7 +40,7 @@ Talk about:
     ~ Self-trained in Angular during free time to improve development skills Utilized AI tools to improve code readability and development efficiency
 - Luise's Strengths:
  ~ Collaborative Team Player, Strong Communication Skills, Strong Communication Skills, Adaptability, Problem-Solving
-``
+`
           },
           {
             role: "user",
