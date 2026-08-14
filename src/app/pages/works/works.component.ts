@@ -28,7 +28,7 @@ export class WorksComponent {
     return this.windowWidth < 768;
   }
 
-projectSlide1 = [
+projectSlide2 = [
     {
       title: 'Web Calculator', 
       description: 'A Calculator in a website.', 
@@ -72,30 +72,30 @@ projectSlide1 = [
   
 ];
 
-projectSlide2 = [
+projectSlide1 = [
   {
-      title: 'Coming Soon', 
-      description: '', 
-      image: "projects/comingsoon.jpg", 
-      alt: 'Coming Soon Picture', 
-      stack: [],
-      link: '',
+      title: 'Skyrocket Search Facet', 
+      description: 'Skyrocket\'s Search Facet Based on Wordpress + Elementor', 
+      image: "projects/skyrocket-search.png", 
+      alt: 'SR Search Facet Picture', 
+      stack: ["Wordpress","Elementor","CSS", "JavaScript", "PHP"],
+      link: 'https://skyrocket.ph/search/',
   },
     {
-      title: 'Coming Soon', 
-      description: '', 
-      image: "projects/comingsoon.jpg", 
-      alt: 'Coming Soon Picture', 
-      stack: [],
-      link: '',
+      title: 'Phinma Properties', 
+      description: 'Phinma Properties\' Website Based on Wordpress + Elementor', 
+      image: "projects/Phinmaproperties.png", 
+      alt: 'Phinma Properties Picture', 
+      stack: ["Wordpress","Elementor","CSS", "JavaScript", "PHP"],
+      link: 'https://phinmaproperties.com/',
   },
     {
-      title: 'Coming Soon', 
-      description: '', 
-      image: "projects/comingsoon.jpg", 
-      alt: 'Coming Soon Picture', 
-      stack: [],
-      link: '',
+      title: 'Breach Secure Now', 
+      description: 'Phinma Properties\' Website Based on Wordpress + Elementor', 
+      image: "projects/breachsecurenow.png", 
+      alt: 'Breach Secure Now', 
+      stack: ["Wordpress","Elementor","CSS", "JavaScript", "PHP"],
+      link: 'https://breachsecurenow.com/',
   },
     {
       title: 'Coming Soon', 

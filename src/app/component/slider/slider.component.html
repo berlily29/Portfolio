@@ -1,50 +1,136 @@
-
-
 <div class="relative w-full px-8 py-5">
-  <h1 class="text-white text-2xl font-semibold px-10 mb-4">{{ title }}</h1>
+
+  <!-- Section Title -->
+  <h1 class="text-white text-2xl font-semibold px-10 mb-4">
+    {{ title }}
+  </h1>
 
   <!-- Left Arrow -->
-  <button *ngIf="showLeftArrow"
-    class="absolute left-4 top-1/2 h-full -translate-y-1/2 z-10 hover:bg-black/50 duration-200 p-2 text-white"
+  <button
+    *ngIf="showLeftArrow"
+    class="absolute left-4 top-1/2 h-full -translate-y-1/2 z-10
+           hover:bg-black/50 duration-200 p-2 text-white"
     (click)="scrollLeft()"
   >
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-10" fill="none"
-      viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-12 w-10"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M15 19l-7-7 7-7"
+      />
     </svg>
   </button>
 
 
+  <!-- Slider -->
   <div
     #slider
-    class="flex overflow-hidden gap-4 scroll-smooth no-scrollbar px-10 py-4"
+    class="flex items-stretch overflow-hidden gap-4 scroll-smooth no-scrollbar px-10 py-4"
   >
+
+    <!-- Project Cards -->
     <div
       *ngFor="let item of items"
-      class="w-[300px] h-[400px] bg-gray-600/20 p-4 rounded-lg flex flex-col items-center justify-center text-white text-xl shrink-0 transform transition-transform duration-300 hover:scale-105"
+      class="w-[300px]
+             min-h-[400px]
+             bg-gray-600/20
+             p-4
+             rounded-lg
+             flex flex-col
+             items-center
+             text-white
+             shrink-0
+             transform
+             transition-transform
+             duration-300
+             hover:scale-105"
     >
-      <img [src]='item.image' class="w-full h-full rounded-2xl" [alt]="item.alt">
-      <h1 class="py-2 text-2xl">{{ item.title }}</h1>
-      <p class="text-center py-2 text-sm"> {{ item.description }}</p> 
-      <p class="flex flex-wrap w-full justify-start text-sm my-2">Stack:   
-        <small *ngFor="let stack of item.stack" class="mx-2 text-sm">
-           {{ stack }} 
-        </small></p>
 
-      <div class="flex w-full justify-end" *ngIf="item.link != ''"> <a [href]="item.link" class='bg-red-600/80 hover:bg-red-600/50 duration-200 rounded-full p-2 text-sm'>Demo</a></div>
+      <!-- Image -->
+      <img
+        [src]="item.image"
+        [alt]="item.alt"
+        class="w-full h-[200px] object-fill rounded-2xl shrink-0"
+      >
 
-      
+      <!-- Title -->
+      <h1
+        class="w-full min-h-[64px] py-2 text-2xl text-center
+               flex items-center justify-center"
+      >
+        {{ item.title }}
+      </h1>
+
+      <!-- Description -->
+      <p class="w-full text-center py-1 text-sm">
+        {{ item.description }}
+      </p>
+
+      <!-- Stack -->
+      <p class="flex flex-wrap w-full justify-start text-sm my-2">
+        Stack:
+
+        <small
+          *ngFor="let stack of item.stack"
+          class="mx-2 text-sm"
+        >
+          {{ stack }}
+        </small>
+      </p>
+
+      <!-- Demo Button -->
+      <div
+        *ngIf="item.link != ''"
+        class="flex w-full justify-end mt-auto pt-3"
+      >
+        <a
+          [href]="item.link"
+          class="bg-red-600/80
+                 hover:bg-red-600/50
+                 duration-200
+                 rounded-full
+                 px-3
+                 py-2
+                 text-sm
+                 whitespace-nowrap"
+        >
+          Demo
+        </a>
+      </div>
+
     </div>
+
   </div>
 
+
   <!-- Right Arrow -->
-  <button *ngIf="showRightArrow"
-    class="absolute right-4 top-1/2 h-full -translate-y-1/2 z-10 hover:bg-black/50 duration-200 p-2 rounded-full text-white"
+  <button
+    *ngIf="showRightArrow"
+    class="absolute right-4 top-1/2 h-full -translate-y-1/2 z-10
+           hover:bg-black/50 duration-200 p-2 rounded-full text-white"
     (click)="scrollRight()"
   >
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-10" fill="none"
-      viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-12 w-10"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M9 5l7 7-7 7"
+      />
     </svg>
   </button>
+
 </div>
