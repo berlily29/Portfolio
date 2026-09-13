@@ -1,0 +1,64 @@
+:host {
+  display: block;
+}
+
+.field {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  color: #f4f4f5;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  outline: none;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.field::placeholder {
+  color: #52525b;
+}
+
+.field:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.field:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: #e50914;
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.18);
+}
+
+.field-error,
+.field-error:focus {
+  border-color: #f87171;
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.16);
+}
+
+.error-text {
+  margin-top: 0.45rem;
+  font-size: 0.75rem;
+  color: #fca5a5;
+}
+
+/* Honeypot — moved out of sight rather than display:none, which some bots skip. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Spinner for the submit button */
+.spin {
+  animation: spinRotate 0.9s linear infinite;
+}
+
+@keyframes spinRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

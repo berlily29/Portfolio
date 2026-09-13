@@ -1,117 +1,128 @@
-import { Component, ViewChild, ElementRef, HostListener, Inject, PLATFORM_ID  } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component } from '@angular/core';
+import { Item } from '../../component/slider/slider.component';
 
 @Component({
   selector: 'app-works',
   standalone: false,
   templateUrl: './works.component.html',
-  styleUrl: './works.component.scss'
+  styleUrl: './works.component.scss',
 })
 export class WorksComponent {
-  windowWidth: number = 0;
-
-   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-
-    if (isPlatformBrowser(this.platformId)) {
-      this.windowWidth = window.innerWidth;
-    }
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: UIEvent) {
-    if (isPlatformBrowser(this.platformId)) {
-      this.windowWidth = (event.target as Window).innerWidth;  
-    }
-  }
-
-  get isMobile() {
-    return this.windowWidth < 768;
-  }
-
-projectSlide2 = [
+  /** Client work shipped in a professional setting. */
+  readonly projectSlide1: Item[] = [
     {
-      title: 'Web Calculator', 
-      description: 'A Calculator in a website.', 
-      image: "projects/calculator.png", 
-      alt: 'Calculator', 
+      title: 'Slowave',
+      description:
+        'Built the Shopify storefront from scratch with the design team — layouts, custom sections, and a responsive experience, taken from concept through to launch.',
+      image: 'projects/slowave.png',
+      alt: 'Slowave storefront',
+      stack: ['Shopify Liquid', 'CSS', 'JavaScript'],
+      link: 'https://slowave.world/',
+      role: 'Lead Developer',
+      year: '2026',
+    },
+    {
+      title: 'Breach Secure Now',
+      description:
+        'Started as support developer and grew into the lead. Ongoing development, new sections, troubleshooting, and form integrations that improved how the site captures user data.',
+      image: 'projects/breachsecurenow.png',
+      alt: 'Breach Secure Now website',
+      stack: ['WordPress', 'Elementor', 'PHP', 'JavaScript', 'HubSpot'],
+      link: 'https://breachsecurenow.com/',
+      role: 'Lead Developer',
+      year: '2026',
+    },
+    {
+      title: 'Skyrocket Search Facet',
+      description:
+        'Developed and implemented the faceted search experience in WordPress and Elementor, working directly with the design team on the interaction and layout.',
+      image: 'projects/skyrocket-search.png',
+      alt: 'Skyrocket search facet',
+      stack: ['WordPress', 'Elementor', 'CSS', 'JavaScript', 'PHP'],
+      link: 'https://skyrocket.ph/search/',
+      role: 'Lead Developer',
+      year: '2026',
+    },
+    {
+      title: 'Nespresso Philippines',
+      description:
+        'Maintained the Magento storefront across seasonal campaigns — product content and SKU updates, campaign banners and offers, new page sections, and bug fixes.',
+      image: 'projects/nespressoph.png',
+      alt: 'Nespresso Philippines store',
+      stack: ['Magento', 'HTML', 'CSS', 'JavaScript'],
+      link: 'https://www.nespresso.ph/',
+      role: 'Maintenance Dev',
+      year: '2026',
+    },
+    {
+      title: 'Phinma Properties',
+      description:
+        'Support developer delivering website updates, new sections, and functionality in WordPress and Elementor alongside the development and design teams.',
+      image: 'projects/Phinmaproperties.png',
+      alt: 'Phinma Properties website',
+      stack: ['WordPress', 'Elementor', 'CSS', 'JavaScript', 'PHP'],
+      link: 'https://phinmaproperties.com/',
+      role: 'Support Developer',
+      year: '2026',
+    },
+  ];
+
+  /** Academic, capstone, and personal builds. */
+  readonly projectSlide2: Item[] = [
+    {
+      title: 'Kayantabe',
+      description:
+        'Capstone web app that matches volunteers to organisational events using a preselection algorithm I designed from scratch, scoring category preference, distance, and past performance. Role-based dashboards for admins, organisers, and volunteers.',
+      image: 'projects/kayantabe.png',
+      alt: 'Kayantabe web application',
+      stack: ['Laravel', 'Blade', 'PHP', 'MySQL'],
+      link: 'https://kayantabe.com/',
+      role: 'Full-Stack & QA',
+      year: '2025',
+    },
+    {
+      title: 'Xpress',
+      description:
+        'A GCash-inspired e-wallet. I built the back end: send-money transactions, a transaction log, OTP email verification via NodeMailer, and a dual-database setup using MongoDB for transactions and MySQL for accounts.',
+      image: 'projects/xpress_project.png',
+      alt: 'Xpress e-wallet application',
+      stack: ['Node.js', 'Express', 'Handlebars', 'MongoDB', 'MySQL'],
+      link: '',
+      role: 'Back-End Dev',
+      year: '2024',
+    },
+    {
+      title: 'Codeeworks',
+      description:
+        'A business site wired to Google Apps Script, using a spreadsheet as a lightweight back end for form submissions and content.',
+      image: 'projects/codeeworks.png',
+      alt: 'Codeeworks website',
+      stack: ['HTML', 'CSS', 'JavaScript', 'Apps Script'],
+      link: 'https://codeeworks.bitbucket.io/',
+      role: 'Developer',
+      year: '2024',
+    },
+    {
+      title: 'Running Ninja',
+      description:
+        'A browser endless-runner built for fun, inspired by the Chrome offline dinosaur — sprite animation, collision detection, and score tracking in vanilla JavaScript.',
+      image: 'projects/runningsprite.png',
+      alt: 'Running Ninja browser game',
+      stack: ['HTML', 'CSS', 'JavaScript'],
+      link: 'https://berlily29.github.io/runningsprite/',
+      role: 'Developer',
+      year: '2023',
+    },
+    {
+      title: 'Web Calculator',
+      description:
+        'A clean, keyboard-friendly calculator built in vanilla JavaScript — an early exercise in DOM handling and state.',
+      image: 'projects/calculator.png',
+      alt: 'Web calculator',
       stack: ['HTML', 'CSS', 'JavaScript'],
       link: 'https://berlily29.github.io/calculator/',
-  },
-   {
-      title: 'Codeeworks', 
-      description: 'A Calculator in a website.', 
-      image: "projects/codeeworks.png", 
-      alt: 'Codeeworks Picture Sample', 
-      stack: ['HTML', 'CSS', 'JavaScript', 'Appscript google'],
-      link: 'https://codeeworks.bitbucket.io/',
-  },
-   {
-      title: 'kayantabe', 
-      description: 'A preselection and information web app.', 
-      image: "projects/kayantabe.png", 
-      alt: 'Kayantabe Picture Sample', 
-      stack: ['Laravel', 'PHP', 'HTML', 'CSS', 'JavaScript', 'MySQL'],
-      link: 'https://kayantabe.com/',
-  },
-   {
-      title: 'Running Ninja', 
-      description: 'Inspired by DINO (because I am bored).', 
-      image: "projects/runningsprite.png", 
-      alt: 'Running Ninja Picture Sample', 
-      stack: ['HTML', 'CSS', 'JavaScript',],
-      link: 'https://berlily29.github.io/runningsprite/',
-  },
-   {
-      title: 'xpress', 
-      description: 'A web-based E-wallet School project.', 
-      image: "projects/xpress_project.png", 
-      alt: 'xpress Picture Sample', 
-      stack: ['Handlebars', 'CSS', 'JavaScript', 'MongoDB', 'Node.js'],
-      link: '',
-  },
-  
-];
-
-projectSlide1 = [
-  {
-      title: 'Skyrocket Search Facet', 
-      description: 'Skyrocket\'s Search Facet Based on Wordpress + Elementor', 
-      image: "projects/skyrocket-search.png", 
-      alt: 'SR Search Facet Picture', 
-      stack: ["Wordpress","Elementor","CSS", "JavaScript", "PHP"],
-      link: 'https://skyrocket.ph/search/',
-  },
-    {
-      title: 'Phinma Properties', 
-      description: 'Phinma Properties\' Website Based on Wordpress + Elementor', 
-      image: "projects/Phinmaproperties.png", 
-      alt: 'Phinma Properties Picture', 
-      stack: ["Wordpress","Elementor","CSS", "JavaScript", "PHP"],
-      link: 'https://phinmaproperties.com/',
-  },
-    {
-      title: 'Breach Secure Now', 
-      description: 'Phinma Properties\' Website Based on Wordpress + Elementor', 
-      image: "projects/breachsecurenow.png", 
-      alt: 'Breach Secure Now', 
-      stack: ["Wordpress","Elementor","CSS", "JavaScript", "PHP"],
-      link: 'https://breachsecurenow.com/',
-  },
-    {
-      title: 'Coming Soon', 
-      description: '', 
-      image: "projects/comingsoon.jpg", 
-      alt: 'Coming Soon Picture', 
-      stack: [],
-      link: '',
-  },
-    {
-      title: 'Coming Soon', 
-      description: '', 
-      image: "projects/comingsoon.jpg", 
-      alt: 'Coming Soon Picture', 
-      stack: [],
-      link: '',
-  },
-]
+      role: 'Developer',
+      year: '2023',
+    },
+  ];
 }

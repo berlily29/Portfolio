@@ -6,8 +6,8 @@ import { RouterModule } from '@angular/router';
 import { SliderComponent } from './slider/slider.component';
 import { ChatComponent } from './chat/chat.component';
 import { FormsModule } from '@angular/forms';
-
-
+import { RevealDirective } from '../shared/reveal.directive';
+import { ParallaxDirective } from '../shared/parallax.directive';
 
 @NgModule({
   declarations: [
@@ -15,13 +15,17 @@ import { FormsModule } from '@angular/forms';
     TopnavComponent,
     SliderComponent,
     ChatComponent,
+    RevealDirective,
+    ParallaxDirective,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule
+  imports: [CommonModule, RouterModule, FormsModule],
+  exports: [
+    FooterComponent,
+    TopnavComponent,
+    SliderComponent,
+    ChatComponent,
+    RevealDirective,
+    ParallaxDirective,
   ],
-  exports: [FooterComponent,TopnavComponent,SliderComponent,ChatComponent]
-
 })
-export class ComponentModule { }
+export class ComponentModule {}

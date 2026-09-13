@@ -1,1 +1,33 @@
-<p>error503 works!</p>
+<div
+  class="relative min-h-screen flex flex-col items-center justify-center text-center
+         px-6 bg-[#050505] text-white overflow-hidden animate-fade-up"
+>
+  <div class="blob h-[420px] w-[420px] bg-red-700/20 left-1/2 -translate-x-1/2 top-1/4"></div>
+
+  <div class="relative">
+    <p class="eyebrow justify-center mb-5">Error 503</p>
+
+    <h1 class="font-display text-6xl md:text-8xl leading-none mb-4">
+      <span class="text-gradient-red">Temporarily down</span>
+    </h1>
+
+    <p class="text-zinc-400 text-base md:text-lg max-w-md mx-auto mb-9 leading-relaxed">
+      The service is unavailable right now — most likely brief maintenance. Please try
+      again in a few minutes.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-3">
+      <a routerLink="/home" class="btn btn-primary px-6 py-3 text-sm">
+        <span class="material-icons text-[19px]">home</span>
+        Back to home
+      </a>
+      <a
+        href="mailto:yambaoluise29&#64;gmail.com?subject=Portfolio%20site%20issue"
+        class="btn btn-ghost px-6 py-3 text-sm"
+      >
+        <span class="material-icons text-[19px]">mail</span>
+        Report it
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,30 @@
-<p>error404 works!</p>
+<div
+  class="relative min-h-screen flex flex-col items-center justify-center text-center
+         px-6 bg-[#050505] text-white overflow-hidden animate-fade-up"
+>
+  <div class="blob h-[420px] w-[420px] bg-red-700/20 left-1/2 -translate-x-1/2 top-1/4"></div>
+
+  <div class="relative">
+    <p class="eyebrow justify-center mb-5">Error 404</p>
+
+    <h1 class="font-display text-7xl md:text-9xl leading-none mb-4">
+      <span class="text-gradient-red">Lost your way?</span>
+    </h1>
+
+    <p class="text-zinc-400 text-base md:text-lg max-w-md mx-auto mb-9 leading-relaxed">
+      This page isn't part of the collection. It may have been moved, renamed, or it never
+      existed in the first place.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-3">
+      <a routerLink="/home" class="btn btn-primary px-6 py-3 text-sm">
+        <span class="material-icons text-[19px]">home</span>
+        Back to home
+      </a>
+      <a routerLink="/projects" class="btn btn-ghost px-6 py-3 text-sm">
+        <span class="material-icons text-[19px]">movie</span>
+        Browse projects
+      </a>
+    </div>
+  </div>
+</div>

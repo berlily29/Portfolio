@@ -1,16 +1,211 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>Giiflix - Portfolio</title>
+  <title>Giiflix — Luise Gian Yambao | Web Developer</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="description"
+    content="Luise Gian Yambao — Web Developer from Pampanga, Philippines. WordPress, Shopify, Angular, Laravel and Node.js projects.">
+
+  <meta property="og:title" content="Giiflix — Luise Gian Yambao | Web Developer">
+  <meta property="og:description"
+    content="The portfolio of Luise Gian Yambao — web developer building client sites in WordPress, Shopify and Angular.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="Giiflix.png">
+
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  <!-- Intro splash.
+       Inlined so it paints on the very first frame, before the app bundle or
+       the main stylesheet arrive. Deliberately uses only system fonts so it
+       renders identically whether or not the webfonts have loaded yet. -->
+  <style>
+    html.gf-intro-active,
+    html.gf-intro-active body {
+      overflow: hidden;
+    }
 
+    #gf-splash {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #050505;
+      padding: 0 6vw;
+      animation: gfSplashOut 0.6s ease 2.45s forwards;
+    }
+
+    /* Soft red pool of light behind the type */
+    #gf-splash::before {
+      content: "";
+      position: absolute;
+      width: min(620px, 80vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(229, 9, 20, 0.22), transparent 65%);
+      opacity: 0;
+      animation: gfGlow 2.2s ease-out 0.3s forwards;
+      pointer-events: none;
+    }
+
+    #gf-splash .gf-inner {
+      position: relative;
+      text-align: center;
+      animation: gfLift 0.6s cubic-bezier(0.65, 0, 0.35, 1) 2.45s forwards;
+    }
+
+    /* ---- Monospace tags that type themselves in ---- */
+    #gf-splash .gf-tag {
+      margin: 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Courier New", monospace;
+      font-size: clamp(13px, 2.6vw, 22px);
+      letter-spacing: 0.04em;
+      color: #e50914;
+      line-height: 1.6;
+    }
+
+    #gf-splash .gf-tag span {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      vertical-align: bottom;
+      width: 0;
+      border-right: 2px solid transparent;
+    }
+
+    #gf-splash .gf-tag--open span {
+      animation:
+        gfTypeOpen 0.6s steps(11, end) 0.2s forwards,
+        gfCaret 0.5s step-end 0.2s 3 forwards;
+    }
+
+    #gf-splash .gf-tag--close span {
+      animation:
+        gfTypeClose 0.6s steps(12, end) 1.5s forwards,
+        gfCaret 0.5s step-end 1.5s 3 forwards;
+    }
+
+    /* ---- The name ---- */
+    #gf-splash .gf-name {
+      margin: 0.35em 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: clamp(30px, 7vw, 76px);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      line-height: 1.05;
+      color: #f5f5f5;
+      opacity: 0;
+      filter: blur(12px);
+      transform: translateY(14px);
+      animation: gfName 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.95s forwards;
+    }
+
+    /* ---- Red rule that sweeps out from the middle ---- */
+    #gf-splash .gf-rule {
+      display: block;
+      height: 2px;
+      width: min(340px, 60vw);
+      margin: 0.2em auto 0;
+      border-radius: 99px;
+      background: linear-gradient(90deg, transparent, #e50914, transparent);
+      transform: scaleX(0);
+      animation: gfRule 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.95s forwards;
+    }
+
+    @keyframes gfTypeOpen  { to { width: 11ch; } }
+    @keyframes gfTypeClose { to { width: 12ch; } }
+
+    @keyframes gfCaret {
+      0%, 49%   { border-right-color: #e50914; }
+      50%, 100% { border-right-color: transparent; }
+    }
+
+    @keyframes gfName {
+      to { opacity: 1; filter: blur(0); transform: translateY(0); }
+    }
+
+    @keyframes gfRule {
+      to { transform: scaleX(1); }
+    }
+
+    @keyframes gfGlow {
+      40%  { opacity: 1; }
+      100% { opacity: 0.75; }
+    }
+
+    @keyframes gfLift {
+      to { transform: translateY(-26px); opacity: 0; }
+    }
+
+    @keyframes gfSplashOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #gf-splash { display: none; }
+    }
+  </style>
 </head>
+
 <body>
+  <div id="gf-splash" aria-hidden="true">
+    <div class="gf-inner">
+      <p class="gf-tag gf-tag--open"><span>&lt;developer&gt;</span></p>
+      <div class="gf-name">Luise Gian Yambao</div>
+      <p class="gf-tag gf-tag--close"><span>&lt;/developer&gt;</span></p>
+      <span class="gf-rule"></span>
+    </div>
+  </div>
+
   <app-root></app-root>
+
+  <script>
+    (function () {
+      var splash = document.getElementById('gf-splash');
+      if (!splash) { return; }
+
+      var seen = false;
+      try { seen = sessionStorage.getItem('gf-intro-seen') === '1'; } catch (e) { /* private mode */ }
+
+      var reduced = window.matchMedia
+        && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Already watched this session, or the user asked for less motion.
+      if (seen || reduced) {
+        splash.parentNode.removeChild(splash);
+        return;
+      }
+
+      try { sessionStorage.setItem('gf-intro-seen', '1'); } catch (e) { /* ignore */ }
+
+      document.documentElement.classList.add('gf-intro-active');
+
+      var done = function () {
+        document.documentElement.classList.remove('gf-intro-active');
+        if (splash.parentNode) { splash.parentNode.removeChild(splash); }
+      };
+
+      setTimeout(done, 3100);
+
+      // Let impatient visitors skip it.
+      splash.addEventListener('click', done);
+      document.addEventListener('keydown', function onKey(e) {
+        if (e.key === 'Escape') {
+          document.removeEventListener('keydown', onKey);
+          done();
+        }
+      });
+    })();
+  </script>
 </body>
+
 </html>

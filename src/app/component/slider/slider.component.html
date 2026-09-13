@@ -1,136 +1,126 @@
-<div class="relative w-full px-8 py-5">
+<section class="relative w-full py-6 md:py-8 group/row">
 
-  <!-- Section Title -->
-  <h1 class="text-white text-2xl font-semibold px-10 mb-4">
-    {{ title }}
-  </h1>
-
-  <!-- Left Arrow -->
-  <button
-    *ngIf="showLeftArrow"
-    class="absolute left-4 top-1/2 h-full -translate-y-1/2 z-10
-           hover:bg-black/50 duration-200 p-2 text-white"
-    (click)="scrollLeft()"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-12 w-10"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      stroke-width="2"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M15 19l-7-7 7-7"
-      />
-    </svg>
-  </button>
-
-
-  <!-- Slider -->
-  <div
-    #slider
-    class="flex items-stretch overflow-hidden gap-4 scroll-smooth no-scrollbar px-10 py-4"
-  >
-
-    <!-- Project Cards -->
-    <div
-      *ngFor="let item of items"
-      class="w-[300px]
-             min-h-[400px]
-             bg-gray-600/20
-             p-4
-             rounded-lg
-             flex flex-col
-             items-center
-             text-white
-             shrink-0
-             transform
-             transition-transform
-             duration-300
-             hover:scale-105"
-    >
-
-      <!-- Image -->
-      <img
-        [src]="item.image"
-        [alt]="item.alt"
-        class="w-full h-[200px] object-fill rounded-2xl shrink-0"
-      >
-
-      <!-- Title -->
-      <h1
-        class="w-full min-h-[64px] py-2 text-2xl text-center
-               flex items-center justify-center"
-      >
-        {{ item.title }}
-      </h1>
-
-      <!-- Description -->
-      <p class="w-full text-center py-1 text-sm">
-        {{ item.description }}
-      </p>
-
-      <!-- Stack -->
-      <p class="flex flex-wrap w-full justify-start text-sm my-2">
-        Stack:
-
-        <small
-          *ngFor="let stack of item.stack"
-          class="mx-2 text-sm"
-        >
-          {{ stack }}
-        </small>
-      </p>
-
-      <!-- Demo Button -->
-      <div
-        *ngIf="item.link != ''"
-        class="flex w-full justify-end mt-auto pt-3"
-      >
-        <a
-          [href]="item.link"
-          class="bg-red-600/80
-                 hover:bg-red-600/50
-                 duration-200
-                 rounded-full
-                 px-3
-                 py-2
-                 text-sm
-                 whitespace-nowrap"
-        >
-          Demo
-        </a>
-      </div>
-
-    </div>
-
+  <!-- Row heading -->
+  <div class="px-6 md:px-14 lg:px-20 mb-4" appReveal="up">
+    <h2 class="text-white text-xl md:text-3xl font-semibold flex items-center gap-3">
+      {{ title }}
+      <span class="h-px flex-1 max-w-[120px] bg-gradient-to-r from-red-600/70 to-transparent"></span>
+    </h2>
+    <p *ngIf="subtitle" class="text-zinc-500 text-sm mt-1">{{ subtitle }}</p>
   </div>
 
-
-  <!-- Right Arrow -->
+  <!-- Left arrow -->
   <button
-    *ngIf="showRightArrow"
-    class="absolute right-4 top-1/2 h-full -translate-y-1/2 z-10
-           hover:bg-black/50 duration-200 p-2 rounded-full text-white"
-    (click)="scrollRight()"
+    type="button"
+    *ngIf="showLeftArrow"
+    (click)="scrollLeft()"
+    aria-label="Scroll left"
+    class="hidden md:grid absolute left-3 top-[58%] -translate-y-1/2 z-20 place-items-center
+           h-14 w-14 rounded-full bg-black/70 border border-white/15 text-white backdrop-blur
+           opacity-0 group-hover/row:opacity-100 hover:bg-red-600 hover:border-red-600
+           hover:scale-110 transition-all duration-300"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-12 w-10"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      stroke-width="2"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M9 5l7 7-7 7"
-      />
-    </svg>
+    <span class="material-icons">chevron_left</span>
   </button>
 
-</div>
+  <!-- Track -->
+  <div
+    #slider
+    class="flex items-stretch gap-4 md:gap-5 overflow-x-auto no-scrollbar scroll-smooth
+           snap-x snap-mandatory px-6 md:px-14 lg:px-20 py-4"
+  >
+    <article
+      *ngFor="let item of items; let i = index"
+      appReveal="up"
+      [revealDelay]="i * 70"
+      class="project-card snap-start shrink-0 w-[260px] sm:w-[300px] md:w-[330px]
+             rounded-xl overflow-hidden border border-white/10 bg-[#131313]
+             flex flex-col"
+    >
+      <!-- Thumbnail -->
+      <div class="relative overflow-hidden aspect-video bg-black shrink-0">
+        <img
+          [src]="item.image"
+          [alt]="item.alt"
+          loading="lazy"
+          class="h-full w-full object-cover object-top transition-transform duration-700
+                 project-card__img"
+        />
+
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent
+                 opacity-80"
+        ></div>
+
+        <!-- Year badge -->
+        <span
+          *ngIf="item.year"
+          class="absolute top-3 left-3 text-[10px] tracking-widest uppercase px-2 py-1 rounded
+                 bg-black/70 border border-white/15 text-zinc-300 backdrop-blur"
+        >
+          {{ item.year }}
+        </span>
+
+        <!-- Role badge -->
+        <span
+          *ngIf="item.role"
+          class="absolute top-3 right-3 text-[10px] tracking-widest uppercase px-2 py-1 rounded
+                 bg-red-600/85 text-white"
+        >
+          {{ item.role }}
+        </span>
+      </div>
+
+      <!-- Body -->
+      <div class="flex flex-col flex-1 p-5">
+        <h3 class="text-white text-lg font-semibold leading-snug mb-2">
+          {{ item.title }}
+        </h3>
+
+        <p class="text-[13px] text-zinc-400 leading-relaxed mb-4 line-clamp-4">
+          {{ item.description }}
+        </p>
+
+        <div class="flex flex-wrap gap-1.5 mb-5">
+          <span *ngFor="let tech of item.stack" class="chip">{{ tech }}</span>
+        </div>
+
+        <div class="mt-auto">
+          <a
+            *ngIf="item.link"
+            [href]="item.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-red w-full py-2.5 text-[13px]"
+          >
+            <span class="material-icons text-[17px]">open_in_new</span>
+            View Project
+          </a>
+
+          <span
+            *ngIf="!item.link"
+            class="flex items-center justify-center gap-2 w-full py-2.5 text-[13px]
+                   rounded-lg border border-white/10 text-zinc-500"
+          >
+            <span class="material-icons text-[17px]">lock</span>
+            Not publicly hosted
+          </span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Right arrow -->
+  <button
+    type="button"
+    *ngIf="showRightArrow"
+    (click)="scrollRight()"
+    aria-label="Scroll right"
+    class="hidden md:grid absolute right-3 top-[58%] -translate-y-1/2 z-20 place-items-center
+           h-14 w-14 rounded-full bg-black/70 border border-white/15 text-white backdrop-blur
+           opacity-0 group-hover/row:opacity-100 hover:bg-red-600 hover:border-red-600
+           hover:scale-110 transition-all duration-300"
+  >
+    <span class="material-icons">chevron_right</span>
+  </button>
+</section>

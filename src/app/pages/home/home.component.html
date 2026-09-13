@@ -1,80 +1,468 @@
-<div>
-    
-    <div *ngIf="!isMobile" class="relative shadow-[inset_0_4px_12px_rgba(0,0,0,0.6)] bg-white">
-        <img src="landpage.jpg" class="w-[100vw]">
-        <div class="grid md:grid-cols-3 absolute top-[50%] left-[7%] gap-x-2">
-        <a href="profiles/Luise_Gian_Yambao_Resume_2026.pdf" download="Luise_Yambao_Resume.pdf" class="flex items-center justify-center bg-white hover:bg-gray-200 rounded-xl p-1 md:p-2 lg:p-3"><span class="material-icons">play_circle</span>&nbsp;&nbsp;Resume</a>
-        <a href="https://www.linkedin.com/in/luise-gian-yambao-9a3757325" class="flex items-center justify-center bg-gray-400/70 hover:bg-gray-400/60 rounded-xl p-1 md:p-2 lg:p-3"><span class="material-icons">info</span>&nbsp;&nbsp;LinkedIn</a>
-        <a href="https://github.com/berlily29" class="flex items-center justify-center bg-gray-400/70 hover:bg-gray-400/60 rounded-xl p-1 md:p-2 lg:p-3"><span class="material-icons">dashboard</span>&nbsp;&nbsp;Github</a>
-        </div>
+<div class="animate-fade-up bg-[#050505] text-white overflow-hidden">
+
+  <!-- ================= HERO ================= -->
+  <section class="relative min-h-[100svh] flex items-center isolate">
+
+    <!-- Backdrop (desktop): cropped to the portrait side so the artwork's own
+         baked-in lettering stays off-screen and the headline owns the left. -->
+    <div class="absolute inset-y-0 right-0 -z-10 hidden md:block w-[58%] lg:w-[55%] overflow-hidden">
+      <img
+        src="landpage.jpg"
+        alt=""
+        aria-hidden="true"
+        appParallax
+        [parallaxSpeed]="0.08"
+        [parallaxScale]="1.25"
+        class="h-full w-full object-cover object-right"
+      />
+      <!-- Opaque for the first quarter so the artwork's own lettering can never
+           peek out of the crop, then a soft fade into the page. -->
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-[#050505] from-25% via-[#050505]/70 via-60%
+               to-transparent"
+      ></div>
     </div>
 
-    <div *ngIf="isMobile" class="flex flex-col items-center w-full bg-red-1000 relative">
-        
-        <div class="flex flex-col bg-red-900 rounded-full shadow-[inset_0_4px_12px_rgba(0,0,0,0.6)] mt-10"> 
-            <img src='profile.png' alt="profile picture">
-            <div class="absolute bottom-[20%] bg-white/70 rounded-e-xl">
-            <h1 class="text-black text-sm mx-4 rounded-lg p-2">The Web Developer
-                <br>
-                <small>Luise Yambao</small>
-            </h1>
-           
-            </div>
-        </div>
-
-        <div class="absolute bottom-[8%] grid grid-cols-3 gap-x-2 w-full px-4">
-            <a href="profiles/Luise_Gian_Yambao_Resume_2026.pdf" download="Luise_Yambao_Resume.pdf" class="flex items-center text-[10px] md:text-md justify-center bg-white hover:bg-gray-200 rounded-xl p-1"><span class="material-icons">play_circle</span>&nbsp;&nbsp;Resume</a>
-            <a href="https://www.linkedin.com/in/luise-gian-yambao-9a3757325" class="flex items-center md:text-md text-[10px] justify-center bg-gray-400/70 hover:bg-gray-400/60 rounded-xl p-1"><span class="material-icons">info</span>&nbsp;&nbsp;LinkedIn</a>
-            <a href="https://github.com/berlily29" class="flex items-center justify-center bg-gray-400/70 md:text-md text-[10px] hover:bg-gray-400/60 rounded-xl p-1"><span class="material-icons">dashboard</span>&nbsp;&nbsp;Github</a>
-        </div>
-
+    <!-- Backdrop (mobile) -->
+    <div class="absolute inset-0 -z-10 overflow-hidden md:hidden">
+      <img
+        src="profile.png"
+        alt=""
+        aria-hidden="true"
+        class="h-full w-full object-cover object-[68%_top] opacity-30"
+      />
+      <!-- keep the portrait readable behind the copy -->
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/85 to-[#050505]/35"
+      ></div>
     </div>
 
-    <div class="">
-        <h2 class="text-white text-2xl md:text-5xl text-center py-6">
-            Web Development
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-4">
-            <div class="flex items-center justify-center py-2" *ngFor="let web of webDev">
-                <img [src]="web.src" [alt]="web.alt" class="h-20 w-20 md:w-30 md:h-30 grayscale hover:grayscale-0 duration-300">
-            </div>
-        </div>
+    <!-- Bottom scrim, exactly like a streaming hero -->
+    <div
+      class="absolute inset-0 -z-10 bg-gradient-to-t from-[#050505] via-[#050505]/55 to-transparent"
+    ></div>
+
+    <!-- Ambient red glow -->
+    <div
+      class="blob -z-10 h-[420px] w-[420px] bg-red-700/25 -left-24 top-1/4"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Hero content -->
+    <div class="relative w-full px-6 md:px-14 lg:px-20 pt-28 pb-32 md:pt-24 md:pb-28 max-w-5xl">
+
+      <p class="eyebrow mb-5 animate-fade-up" style="animation-delay: .1s">
+        Web Developer &middot; Pampanga, Philippines
+      </p>
+
+      <h1
+        class="font-display leading-[0.92] tracking-tight animate-fade-up"
+        style="animation-delay: .2s"
+      >
+        <span class="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white">
+          Luise Gian
+        </span>
+        <span class="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gradient-red">
+          Yambao
+        </span>
+      </h1>
+
+      <!-- Rotating specialism line -->
+      <p
+        class="mt-6 text-lg md:text-2xl text-zinc-300 font-light max-w-2xl animate-fade-up"
+        style="animation-delay: .32s"
+      >
+        I build and ship client websites in
+        <span class="inline-grid align-bottom overflow-hidden h-[1.35em]">
+          <span
+            class="font-semibold text-white transition-all duration-400 ease-out"
+            [class.opacity-0]="rotatingOut"
+            [class.-translate-y-3]="rotatingOut"
+          >
+            {{ currentWord }}
+          </span>
+        </span>
+        &mdash; from the first wireframe to launch day.
+      </p>
+
+      <p
+        class="mt-4 text-sm md:text-base text-zinc-400 max-w-xl leading-relaxed animate-fade-up"
+        style="animation-delay: .4s"
+      >
+        Currently a Junior Web Developer at <span class="text-zinc-200">Skyrocket Studios</span>,
+        leading builds for Slowave and BreachSecureNow, and maintaining Nespresso Philippines.
+        Magna Cum Laude, Holy Angel University.
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-9 flex flex-wrap gap-3 animate-fade-up" style="animation-delay: .5s">
+        <a
+          href="profiles/Luise_Gian_Yambao_Resume_2026.pdf"
+          download="Luise_Yambao_Resume.pdf"
+          class="btn btn-primary px-6 py-3 text-sm md:text-base"
+        >
+          <span class="material-icons text-[20px]">play_arrow</span>
+          Download Resume
+        </a>
+
+        <a routerLink="/projects" class="btn btn-ghost px-6 py-3 text-sm md:text-base">
+          <span class="material-icons text-[20px]">movie</span>
+          View Projects
+        </a>
+
+        <a routerLink="/contacts" class="btn btn-red px-6 py-3 text-sm md:text-base">
+          <span class="material-icons text-[20px]">mail</span>
+          Hire Me
+        </a>
+      </div>
+
+      <!-- Social row -->
+      <div
+        class="mt-7 flex items-center gap-5 text-sm text-zinc-400 animate-fade-up"
+        style="animation-delay: .6s"
+      >
+        <a
+          href="https://github.com/berlily29"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-white transition-colors flex items-center gap-1.5"
+        >
+          <span class="material-icons text-[18px]">dashboard</span> GitHub
+        </a>
+        <span class="text-zinc-700">|</span>
+        <a
+          href="https://www.linkedin.com/in/luise-gian-yambao-9a3757325"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-white transition-colors flex items-center gap-1.5"
+        >
+          <span class="material-icons text-[18px]">info</span> LinkedIn
+        </a>
+        <span class="text-zinc-700">|</span>
+        <a
+          href="mailto:yambaoluise29&#64;gmail.com?subject=Project%20enquiry"
+          class="hover:text-white transition-colors flex items-center gap-1.5"
+        >
+          <span class="material-icons text-[18px]">alternate_email</span> Email
+        </a>
+      </div>
     </div>
 
-      <div class="rounded-2xl">
-        <h2 class="text-white text-xl md:text-5xl text-center py-10">
-            Database Management
-        </h2>
-        <div class="grid grid-cols-2">
-            <div class="flex items-center justify-center py-5">
-                <img src="mongodb.png" alt="Mongodb Logo" class="h-20 w-20 md:w-35 md:h-35 grayscale hover:grayscale-0 duration-300">
-            </div>
-             <div class="flex items-center justify-center py-2">
-                <img src="mysql.png" alt="MySQL Logo" class="h-20 w-20 md:w-35 md:h-35 grayscale hover:grayscale-0 duration-300">
-            </div>
-        </div>
+    <!-- Scroll hint -->
+    <div
+      class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-500"
+      aria-hidden="true"
+    >
+      <span class="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+      <span class="scroll-mouse"><i></i></span>
     </div>
+  </section>
 
-    <div class=" overflow-hidden bg-gray-900/80 shadow-[inset_0_4px_12px_rgba(0,0,0,0.6)] py-5">
-        <h2 class="text-white text-xl md:text-2xl text-center mb-8 ">Other Programming Tools</h2>
+  <!-- ================= STATS ================= -->
+  <section class="relative border-y border-white/8 bg-[#0b0b0b]">
+    <div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-white/8">
+      <div
+        *ngFor="let stat of stats; let i = index"
+        appReveal="up"
+        [revealDelay]="i * 90"
+        class="flex flex-col items-center justify-center gap-1 py-9 px-4 text-center group"
+      >
+        <span
+          class="material-icons text-red-600 text-[22px] mb-1 transition-transform duration-500
+                 group-hover:scale-125 group-hover:-translate-y-0.5"
+          >{{ stat.icon }}</span
+        >
+        <span class="font-display text-3xl md:text-4xl text-white">{{ stat.value }}</span>
+        <span class="text-[11px] md:text-xs tracking-wider uppercase text-zinc-500">{{
+          stat.label
+        }}</span>
+      </div>
+    </div>
+  </section>
 
-        <div class="overflow-hidden w-full ">
-            <div class="flex w-max animate-scroll-left-to-right">
-                 <div *ngFor="let source of sources">
-                    <img [src]="source.src" [alt]="source.alt" class="w-20 h-20 md:w-27 md:h-27 mx-8 grayscale hover:grayscale-0 duration-300">
-                </div>
-                 <div *ngFor="let source of sources">
-                    <img [src]="source.src" [alt]="source.alt" class="w-20 h-20 md:w-27 md:h-27 mx-8 grayscale hover:grayscale-0 duration-300">
-                </div>
-                 <div *ngFor="let source of sources">
-                    <img [src]="source.src" [alt]="source.alt" class="w-20 h-20 md:w-27 md:h-27 mx-8 grayscale hover:grayscale-0 duration-300">
-                </div>
+  <!-- ================= ABOUT ================= -->
+  <section class="relative px-6 md:px-14 lg:px-20 py-20 md:py-28">
+    <div class="max-w-4xl">
+      <p class="eyebrow mb-4" appReveal="up">About</p>
+      <h2
+        class="font-display text-4xl md:text-6xl leading-tight mb-6"
+        appReveal="up"
+        [revealDelay]="80"
+      >
+        Websites that <span class="text-gradient-red">launch</span> &mdash; and keep
+        earning after.
+      </h2>
+      <p
+        class="text-zinc-400 text-base md:text-lg leading-relaxed"
+        appReveal="up"
+        [revealDelay]="160"
+      >
+        I'm a results-driven web developer who builds, maintains, and optimises client
+        websites. I've taken projects from concept to launch as lead developer, shipped
+        responsive front-ends, wired up SEO and analytics, and integrated the third-party
+        tools that turn traffic into captured leads. I work closely with designers and
+        cross-functional teams, and I'm comfortable juggling several client briefs at once.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-2" appReveal="up" [revealDelay]="240">
+        <span class="chip">Concept to launch</span>
+        <span class="chip">SEO implementation</span>
+        <span class="chip">GA4 &amp; GTM tracking</span>
+        <span class="chip">Lead capture &amp; forms</span>
+        <span class="chip">Responsive design</span>
+        <span class="chip">Site maintenance</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE (Netflix "episodes") ================= -->
+  <section class="relative px-6 md:px-14 lg:px-20 py-16 md:py-24 bg-[#0a0a0a] border-y border-white/8">
+    <div class="max-w-5xl">
+      <p class="eyebrow mb-4" appReveal="up">Experience</p>
+      <h2 class="font-display text-4xl md:text-6xl mb-3" appReveal="up" [revealDelay]="80">
+        Episodes
+      </h2>
+      <p class="text-zinc-500 mb-12 text-sm md:text-base" appReveal="up" [revealDelay]="140">
+        Four roles, three years, and a lot of shipped websites.
+      </p>
+
+      <div class="space-y-4">
+        <article
+          *ngFor="let role of timeline; let i = index"
+          appReveal="up"
+          [revealDelay]="i * 110"
+          class="card group p-6 md:p-8 flex gap-5 md:gap-8"
+        >
+          <!-- Episode number -->
+          <div class="shrink-0 pt-1">
+            <span
+              class="font-display text-3xl md:text-5xl text-zinc-700 transition-colors duration-500
+                     group-hover:text-red-600"
+            >
+              {{ i + 1 }}
+            </span>
+          </div>
+
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 mb-1">
+              <h3 class="text-lg md:text-2xl font-semibold text-white">{{ role.title }}</h3>
+              <span
+                *ngIf="role.current"
+                class="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full
+                       bg-red-600/15 text-red-400 border border-red-600/35"
+                >Now playing</span
+              >
             </div>
-            
+
+            <p class="text-sm md:text-base text-red-500/90 mb-1">{{ role.company }}</p>
+            <p class="text-[11px] md:text-xs uppercase tracking-widest text-zinc-600 mb-4">
+              {{ role.period }}
+            </p>
+
+            <ul class="space-y-2 mb-5">
+              <li
+                *ngFor="let point of role.points"
+                class="flex gap-3 text-sm md:text-[15px] text-zinc-400 leading-relaxed"
+              >
+                <span class="text-red-600 mt-1.5 shrink-0 h-1 w-1 rounded-full bg-red-600"></span>
+                {{ point }}
+              </li>
+            </ul>
+
+            <div class="flex flex-wrap gap-1.5">
+              <span *ngFor="let tag of role.tags" class="chip">{{ tag }}</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TECH STACK ================= -->
+  <section class="relative px-6 md:px-14 lg:px-20 py-20 md:py-28">
+    <p class="eyebrow mb-4" appReveal="up">Toolkit</p>
+    <h2 class="font-display text-4xl md:text-6xl mb-3" appReveal="up" [revealDelay]="80">
+      Tech Stack
+    </h2>
+    <p class="text-zinc-500 mb-12 max-w-2xl text-sm md:text-base" appReveal="up" [revealDelay]="140">
+      What I reach for, grouped by where it sits in the build.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+      <div
+        *ngFor="let group of stackGroups; let i = index"
+        appReveal="up"
+        [revealDelay]="i * 80"
+        class="card p-6 group"
+      >
+        <div class="flex items-center gap-3 mb-5">
+          <span
+            class="h-10 w-10 rounded-lg grid place-items-center bg-red-600/12 border border-red-600/25
+                   text-red-500 transition-all duration-500
+                   group-hover:bg-red-600 group-hover:text-white group-hover:scale-110"
+          >
+            <span class="material-icons text-[20px]">{{ group.icon }}</span>
+          </span>
+          <h3 class="text-base md:text-lg font-semibold text-white">{{ group.label }}</h3>
         </div>
 
-         
+        <div class="flex flex-wrap gap-1.5">
+          <span *ngFor="let item of group.items" class="chip">{{ item }}</span>
+        </div>
+      </div>
     </div>
+  </section>
 
+  <!-- ================= LOGO MARQUEES ================= -->
+  <section
+    class="relative py-14 md:py-16 bg-[#0a0a0a] border-y border-white/8 overflow-hidden"
+    appReveal="blur"
+  >
+    <h2 class="sr-only">Technologies I work with</h2>
+
+    <div class="marquee-wrap marquee-mask space-y-6">
+      <!-- Row 1 -->
+      <div class="marquee-track">
+        <div *ngFor="let item of webDev.concat(webDev)" class="shrink-0">
+          <img
+            [src]="item.src"
+            [alt]="item.alt"
+            title="{{ item.alt }}"
+            class="h-14 w-14 md:h-20 md:w-20 object-contain mx-7 md:mx-10 grayscale opacity-55
+                   hover:grayscale-0 hover:opacity-100 hover:scale-110
+                   transition-all duration-500"
+          />
+        </div>
+      </div>
+
+      <!-- Row 2 (reversed) -->
+      <div class="marquee-track reverse">
+        <div *ngFor="let item of sources.concat(sources)" class="shrink-0">
+          <img
+            [src]="item.src"
+            [alt]="item.alt"
+            title="{{ item.alt }}"
+            class="h-12 w-12 md:h-16 md:w-16 object-contain mx-7 md:mx-10 grayscale opacity-45
+                   hover:grayscale-0 hover:opacity-100 hover:scale-110
+                   transition-all duration-500"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CREDENTIALS ================= -->
+  <section class="relative px-6 md:px-14 lg:px-20 py-20 md:py-28">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16">
+
+      <!-- Education & achievements -->
+      <div appReveal="left">
+        <p class="eyebrow mb-4">Education</p>
+        <h2 class="font-display text-3xl md:text-5xl mb-8">Credentials</h2>
+
+        <div class="card p-6 mb-4">
+          <div class="flex items-start justify-between gap-4 mb-1">
+            <h3 class="text-lg font-semibold text-white">Holy Angel University</h3>
+            <span class="text-xs text-zinc-500 shrink-0 pt-1">2021 — 2025</span>
+          </div>
+          <p class="text-sm text-zinc-400">Bachelor's Degree</p>
+          <p class="text-sm text-red-500 mt-1">Magna Cum Laude</p>
+        </div>
+
+        <div class="card p-6 mb-6">
+          <div class="flex items-start justify-between gap-4 mb-1">
+            <h3 class="text-lg font-semibold text-white">University of the Assumption</h3>
+            <span class="text-xs text-zinc-500 shrink-0 pt-1">2019 — 2021</span>
+          </div>
+          <p class="text-sm text-zinc-400">Senior High School — STEM</p>
+          <p class="text-sm text-red-500 mt-1">With Honors</p>
+        </div>
+
+        <ul class="space-y-2.5">
+          <li
+            *ngFor="let item of achievements"
+            class="flex gap-3 text-sm text-zinc-400 leading-relaxed"
+          >
+            <span class="material-icons text-red-600 text-[17px] shrink-0">star</span>
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Certifications -->
+      <div appReveal="right">
+        <p class="eyebrow mb-4">Certifications</p>
+        <h2 class="font-display text-3xl md:text-5xl mb-8">Certified</h2>
+
+        <div class="space-y-3">
+          <div
+            *ngFor="let cert of certifications; let i = index"
+            appReveal="up"
+            [revealDelay]="i * 80"
+            class="card p-5 flex items-center gap-4 group"
+          >
+            <span
+              class="h-11 w-11 shrink-0 rounded-lg grid place-items-center bg-white/5
+                     border border-white/10 text-red-500 transition-all duration-500
+                     group-hover:bg-red-600 group-hover:text-white"
+            >
+              <span class="material-icons text-[20px]">verified</span>
+            </span>
+            <div class="min-w-0">
+              <h3 class="text-[15px] font-medium text-white truncate">{{ cert.name }}</h3>
+              <p class="text-xs text-zinc-500">{{ cert.issuer }} &middot; {{ cert.year }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-6 mt-6">
+          <h3 class="text-sm font-semibold text-white mb-3 flex items-center gap-2">
+            <span class="material-icons text-red-500 text-[18px]">translate</span>
+            Languages
+          </h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="chip">English</span>
+            <span class="chip">Tagalog</span>
+            <span class="chip">Kapampangan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="relative overflow-hidden border-t border-white/8">
+    <div class="blob h-[380px] w-[380px] bg-red-700/25 left-1/2 -translate-x-1/2 top-0"></div>
+
+    <div class="relative px-6 md:px-14 lg:px-20 py-24 md:py-32 text-center max-w-3xl mx-auto">
+      <p class="eyebrow justify-center mb-5" appReveal="up">Let's talk</p>
+
+      <h2 class="font-display text-4xl md:text-6xl lg:text-7xl mb-5" appReveal="up" [revealDelay]="80">
+        Got a site that needs <span class="text-gradient-red">building</span>?
+      </h2>
+
+      <p
+        class="text-zinc-400 text-base md:text-lg mb-9 leading-relaxed"
+        appReveal="up"
+        [revealDelay]="160"
+      >
+        Whether it's a new build, a redesign, or an existing site that needs someone
+        dependable to maintain and improve it — tell me what you have in mind and
+        I'll get back to you.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-3" appReveal="up" [revealDelay]="240">
+        <a routerLink="/contacts" class="btn btn-red px-7 py-3.5 text-sm md:text-base">
+          <span class="material-icons text-[20px]">send</span>
+          Start a conversation
+        </a>
+        <a routerLink="/projects" class="btn btn-ghost px-7 py-3.5 text-sm md:text-base">
+          <span class="material-icons text-[20px]">visibility</span>
+          See the work first
+        </a>
+      </div>
+    </div>
+  </section>
 </div>
+
 <app-footer></app-footer>

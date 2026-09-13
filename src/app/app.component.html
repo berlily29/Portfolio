@@ -1,6 +1,27 @@
+<!-- Reading-progress bar -->
+<div #progressBar class="scroll-progress" style="transform: scaleX(0)"></div>
 
-<app-topnav class="fixed w-full z-99"></app-topnav>
-<div class="flex w-full flex-col bg-black">
-  <router-outlet class="w-full"></router-outlet>
-  <app-chat></app-chat>
-</div>
+<app-topnav></app-topnav>
+
+<main class="flex w-full flex-col bg-[#050505] min-h-screen">
+  <router-outlet></router-outlet>
+</main>
+
+<app-chat></app-chat>
+
+<!-- Back to top -->
+<button
+  type="button"
+  (click)="scrollToTop()"
+  aria-label="Back to top"
+  class="fixed bottom-24 right-6 z-40 h-11 w-11 rounded-full grid place-items-center
+         border border-white/15 bg-black/70 backdrop-blur text-white
+         shadow-lg transition-all duration-500 hover:bg-red-600 hover:border-red-600
+         hover:-translate-y-1"
+  [class.opacity-0]="!showBackToTop"
+  [class.pointer-events-none]="!showBackToTop"
+  [class.translate-y-4]="!showBackToTop"
+  [class.opacity-100]="showBackToTop"
+>
+  <span class="material-icons text-[20px]">arrow_upward</span>
+</button>
