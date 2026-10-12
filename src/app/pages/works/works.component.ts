@@ -32,6 +32,17 @@ export class WorksComponent {
       role: 'Lead Developer',
       year: '2026',
     },
+      {
+      title: 'BWEARS Security',
+      description:
+        'Co-developed the website from scratch on WordPress and Elementor, building pages and sections from designer mockups, including solution, industry, blog, and case study pages. Integrated a Retell AI widget to support customer inquiries.',
+      image: 'projects/bwears.png',
+      alt: 'BWEARS Security website',
+      stack: ['WordPress', 'Elementor', 'Retell AI'],
+      link: 'https://bwears.com/',
+      role: 'Co-Developer',
+      year: '2026',
+    },
     {
       title: 'Skyrocket Search Facet',
       description:
@@ -76,7 +87,7 @@ export class WorksComponent {
       image: 'projects/kayantabe.png',
       alt: 'Kayantabe web application',
       stack: ['Laravel', 'Blade', 'PHP', 'MySQL'],
-      link: 'https://kayantabe.com/',
+      link: '',
       role: 'Full-Stack & QA',
       year: '2025',
     },
@@ -98,7 +109,7 @@ export class WorksComponent {
       image: 'projects/codeeworks.png',
       alt: 'Codeeworks website',
       stack: ['HTML', 'CSS', 'JavaScript', 'Apps Script'],
-      link: 'https://codeeworks.bitbucket.io/',
+      link: '',
       role: 'Developer',
       year: '2024',
     },
